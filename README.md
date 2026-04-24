@@ -26,7 +26,7 @@ For the AI assistant panel, run the site through the Node server:
 
 1. Copy `.env.example` to `.env`
 2. Set `GEMINI_API_KEY`
-3. Run `npm start`
+3. Run `npm start`, or on this Windows workspace run `.\run-server.ps1`
 4. Open `http://localhost:3000`
 
 The Gemini key is used only by `server.js`; it is not exposed to frontend JavaScript.
