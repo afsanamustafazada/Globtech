@@ -16,11 +16,20 @@ Static multilingual rebuild for GlobTech Consulting & Engineering.
 
 ## Preview
 
-Open `index.html` in a browser. Language can be switched with the AZ/RU/EN control, or by using:
+For the static pages only, open `index.html` in a browser. Language can be switched with the AZ/RU/EN control, or by using:
 
 - `index.html?lang=az`
 - `index.html?lang=ru`
 - `index.html?lang=en`
+
+For the AI assistant panel, run the site through the Node server:
+
+1. Copy `.env.example` to `.env`
+2. Set `GEMINI_API_KEY`
+3. Run `npm start`
+4. Open `http://localhost:3000`
+
+The Gemini key is used only by `server.js`; it is not exposed to frontend JavaScript.
 
 ## Source Notes
 

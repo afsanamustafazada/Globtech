@@ -428,6 +428,36 @@
         </div>
       </section>
 
+      <section class="section ai-section" id="ai-helper">
+        <div class="section-inner ai-layout">
+          <div class="section-heading compact">
+            <p class="section-kicker" data-i18n="ai.kicker">AI layihə köməkçisi</p>
+            <h2 data-i18n="ai.title">Layihə ehtiyacınızı yazın, ilkin texniki yanaşmanı alın</h2>
+            <p data-i18n="ai.lead">
+              Bu panel Gemini API üçün server-side proxy ilə işləyir. API açarı brauzerdə
+              görünmür, yalnız backend mühitində saxlanılır.
+            </p>
+          </div>
+
+          <form class="ai-card" data-ai-form>
+            <label>
+              <span data-i18n="ai.promptLabel">Obyekt və ehtiyac haqqında qısa yazın</span>
+              <textarea
+                name="message"
+                rows="6"
+                data-i18n-placeholder="ai.promptPlaceholder"
+                placeholder="Məsələn: 3 mərtəbəli ofis üçün Wi-Fi, CCTV və access control lazımdır..."
+                required
+              ></textarea>
+            </label>
+            <button class="button button-primary" type="submit" data-i18n="ai.submit">AI ilə analiz et</button>
+            <div class="ai-response" data-ai-response data-i18n="ai.empty">
+              Cavab burada görünəcək.
+            </div>
+          </form>
+        </div>
+      </section>
+
       <section class="section contact-section" id="contact">
         <div class="section-inner contact-layout">
           <div class="contact-copy">

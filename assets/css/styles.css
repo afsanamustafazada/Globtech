@@ -12,6 +12,61 @@
   --shadow: 0 20px 55px rgba(18, 24, 32, 0.14);
 }
 
+@keyframes heroImageDrift {
+  0% {
+    transform: scale(1.01) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: scale(1.045) translate3d(-8px, -6px, 0);
+  }
+
+  100% {
+    transform: scale(1.01) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes scannerSweep {
+  0% {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+
+  20%,
+  70% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateX(110%);
+    opacity: 0;
+  }
+}
+
+@keyframes fineGridShift {
+  0% {
+    background-position:
+      0 0,
+      0 0;
+  }
+
+  100% {
+    background-position:
+      44px 0,
+      0 44px;
+  }
+}
+
+@keyframes activeDot {
+  0% {
+    transform: scaleX(0.72);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -237,6 +292,34 @@ textarea {
   background: var(--coal);
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.48), transparent 72%);
+  animation: fineGridShift 18s linear infinite;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: 38%;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+  filter: blur(10px);
+  animation: scannerSweep 7s ease-in-out infinite;
+}
+
 .hero-media,
 .hero-shade {
   position: absolute;
@@ -248,6 +331,7 @@ textarea {
   background-position: center;
   background-size: cover;
   transform: scale(1.01);
+  animation: heroImageDrift 22s ease-in-out infinite;
 }
 
 .hero-shade {
@@ -309,13 +393,15 @@ textarea {
   cursor: pointer;
   transition:
     transform 160ms ease,
+    box-shadow 160ms ease,
     background 160ms ease,
     border-color 160ms ease;
 }
 
 .button:hover,
 .button:focus-visible {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(18, 24, 32, 0.14);
 }
 
 .button svg,
@@ -450,8 +536,8 @@ textarea {
   pointer-events: none;
   transform: translateX(24px);
   transition:
-    opacity 240ms ease,
-    transform 240ms ease;
+    opacity 380ms ease,
+    transform 380ms ease;
 }
 
 .slider-slide.is-active {
@@ -508,6 +594,12 @@ textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.015);
+  transition: transform 900ms ease;
+}
+
+.slider-slide.is-active .slider-image-link img {
+  transform: scale(1);
 }
 
 .slider-controls {
@@ -535,6 +627,8 @@ textarea {
 .slider-dot.is-active {
   width: 28px;
   background: var(--red);
+  transform-origin: left center;
+  animation: activeDot 280ms ease both;
 }
 
 .section {
@@ -599,6 +693,25 @@ textarea {
 .service-card {
   min-height: 420px;
   padding: 28px;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.service-card:hover,
+.service-card:focus-within,
+.solution-tile:hover,
+.solution-tile:focus-within,
+.project-card:hover,
+.project-card:focus-visible,
+.gallery-item:hover,
+.partner-card:hover,
+.partner-card:focus-visible,
+.demo-panel:hover {
+  transform: translateY(-4px);
+  border-color: rgba(224, 68, 46, 0.45);
+  box-shadow: 0 22px 46px rgba(18, 24, 32, 0.12);
 }
 
 .icon-pill {
@@ -681,6 +794,10 @@ textarea {
 .solution-tile {
   min-height: 250px;
   padding: 26px;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .solution-tile svg {
@@ -804,6 +921,66 @@ textarea {
   font-weight: 650;
 }
 
+.ai-section {
+  background: var(--soft);
+}
+
+.ai-layout {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 42px;
+  align-items: start;
+}
+
+.ai-card {
+  display: grid;
+  gap: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.ai-card label {
+  display: grid;
+  gap: 10px;
+  color: #25313c;
+  font-weight: 850;
+}
+
+.ai-card textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f9fbfc;
+  color: var(--ink);
+  padding: 14px;
+  outline: 0;
+  resize: vertical;
+}
+
+.ai-card textarea:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgba(15, 143, 130, 0.14);
+}
+
+.ai-response {
+  min-height: 150px;
+  white-space: pre-wrap;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #0f141a;
+  color: rgba(255, 255, 255, 0.86);
+  padding: 18px;
+  font-weight: 650;
+}
+
+.ai-response.is-error {
+  background: #3a1714;
+  color: #fff;
+}
+
 .contact-section {
   background: #fff;
 }
@@ -920,6 +1097,10 @@ textarea {
   border-radius: 8px;
   background: #fff;
   box-shadow: 0 12px 32px rgba(18, 24, 32, 0.07);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .project-card img {
@@ -1031,6 +1212,10 @@ textarea {
   border-radius: 8px;
   background: #fff;
   box-shadow: 0 12px 32px rgba(18, 24, 32, 0.07);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .gallery-item img {
@@ -1058,6 +1243,51 @@ textarea {
   background: #fff;
   padding: 30px;
   box-shadow: 0 12px 32px rgba(18, 24, 32, 0.07);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.motion-ready .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 560ms ease,
+    transform 560ms ease;
+}
+
+.motion-ready .reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motion-ready .reveal-on-scroll:nth-child(2) {
+  transition-delay: 70ms;
+}
+
+.motion-ready .reveal-on-scroll:nth-child(3) {
+  transition-delay: 120ms;
+}
+
+.motion-ready .reveal-on-scroll:nth-child(4) {
+  transition-delay: 170ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  .motion-ready .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .demo-preview {
@@ -1110,7 +1340,8 @@ textarea {
   .standards-layout,
   .contact-layout,
   .detail-layout,
-  .demo-layout {
+  .demo-layout,
+  .ai-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1318,6 +1549,7 @@ textarea {
   .solution-tile,
   .process-list li,
   .contact-form,
+  .ai-card,
   .project-card-body,
   .demo-panel,
   .facts-card {

@@ -376,6 +376,18 @@ const extraTranslations = {
     "partners.zkteco": "Access control, biometrik sistemlər və turniket həlləri",
     "partners.rubezh": "Yanğın siqnalizasiya və bildiriş sistemləri",
     "partners.hikvision": "CCTV, video analitika və monitorinq həlləri",
+    "ai.kicker": "AI layihə köməkçisi",
+    "ai.title": "Layihə ehtiyacınızı yazın, ilkin texniki yanaşmanı alın",
+    "ai.lead":
+      "Bu panel Gemini API üçün server-side proxy ilə işləyir. API açarı brauzerdə görünmür, yalnız backend mühitində saxlanılır.",
+    "ai.promptLabel": "Obyekt və ehtiyac haqqında qısa yazın",
+    "ai.promptPlaceholder": "Məsələn: 3 mərtəbəli ofis üçün Wi-Fi, CCTV və access control lazımdır...",
+    "ai.submit": "AI ilə analiz et",
+    "ai.empty": "Cavab burada görünəcək.",
+    "ai.loading": "Analiz hazırlanır...",
+    "ai.fileMode":
+      "AI paneli üçün saytı server ilə açmaq lazımdır: terminalda npm start işlədin və http://localhost:3000 ünvanına keçin.",
+    "ai.error": "AI cavabı alınmadı. API açarını və serveri yoxlayın.",
     "projects.kicker": "Portfolio",
     "projects.hero.title": "Görülən işlər və layihə siyahısı",
     "projects.hero.lead":
@@ -477,6 +489,18 @@ const extraTranslations = {
     "partners.zkteco": "Access control, биометрия и турникетные решения",
     "partners.rubezh": "Пожарная сигнализация и системы оповещения",
     "partners.hikvision": "CCTV, видеоаналитика и мониторинг",
+    "ai.kicker": "AI-помощник проекта",
+    "ai.title": "Опишите задачу и получите первичный технический подход",
+    "ai.lead":
+      "Этот блок работает через server-side proxy для Gemini API. API-ключ не виден в браузере и хранится только на backend.",
+    "ai.promptLabel": "Кратко опишите объект и потребность",
+    "ai.promptPlaceholder": "Например: для 3-этажного офиса нужны Wi-Fi, CCTV и access control...",
+    "ai.submit": "Проанализировать с AI",
+    "ai.empty": "Ответ появится здесь.",
+    "ai.loading": "Готовится анализ...",
+    "ai.fileMode":
+      "Для AI-панели сайт нужно открыть через сервер: запустите npm start и перейдите на http://localhost:3000.",
+    "ai.error": "Не удалось получить AI-ответ. Проверьте API-ключ и сервер.",
     "projects.kicker": "Портфолио",
     "projects.hero.title": "Выполненные работы и список проектов",
     "projects.hero.lead":
@@ -578,6 +602,18 @@ const extraTranslations = {
     "partners.zkteco": "Access control, biometric systems and turnstile solutions",
     "partners.rubezh": "Fire alarm and notification systems",
     "partners.hikvision": "CCTV, video analytics and monitoring solutions",
+    "ai.kicker": "AI project assistant",
+    "ai.title": "Describe your need and get an initial technical approach",
+    "ai.lead":
+      "This panel uses a server-side proxy for the Gemini API. The API key is not visible in the browser and stays in the backend environment.",
+    "ai.promptLabel": "Briefly describe the facility and need",
+    "ai.promptPlaceholder": "Example: A 3-floor office needs Wi-Fi, CCTV and access control...",
+    "ai.submit": "Analyze with AI",
+    "ai.empty": "The answer will appear here.",
+    "ai.loading": "Preparing analysis...",
+    "ai.fileMode":
+      "The AI panel needs the site to run through the server: run npm start and open http://localhost:3000.",
+    "ai.error": "Could not get an AI response. Check the API key and server.",
     "projects.kicker": "Portfolio",
     "projects.hero.title": "Delivered work and project list",
     "projects.hero.lead":
@@ -833,6 +869,119 @@ function initSliders() {
   });
 }
 
+function initMotion() {
+  const revealTargets = document.querySelectorAll(
+    [
+      ".section-heading",
+      ".intro-grid p",
+      ".service-card",
+      ".solution-tile",
+      ".process-list li",
+      ".standards-panel span",
+      ".partner-card",
+      ".ai-card",
+      ".contact-form",
+      ".project-card",
+      ".gallery-item",
+      ".demo-panel",
+      ".demo-preview",
+      ".slider-shell",
+      ".facts-card",
+    ].join(", ")
+  );
+
+  if (!revealTargets.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  document.body.classList.add("motion-ready");
+
+  revealTargets.forEach((element) => {
+    element.classList.add("reveal-on-scroll");
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      rootMargin: "0px 0px -12% 0px",
+      threshold: 0.12,
+    }
+  );
+
+  revealTargets.forEach((element) => observer.observe(element));
+  window.setTimeout(() => {
+    revealTargets.forEach((element) => element.classList.add("is-visible"));
+  }, 900);
+}
+
+function getTranslation(key) {
+  const language = html.lang || getInitialLanguage();
+  return translations[language]?.[key] || translations[defaultLanguage][key] || "";
+}
+
+function initAiAssistant() {
+  const form = document.querySelector("[data-ai-form]");
+
+  if (!form) {
+    return;
+  }
+
+  const responseBox = form.querySelector("[data-ai-response]");
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    responseBox.classList.remove("is-error");
+
+    if (window.location.protocol === "file:") {
+      responseBox.textContent = getTranslation("ai.fileMode");
+      responseBox.classList.add("is-error");
+      return;
+    }
+
+    const message = new FormData(form).get("message")?.toString().trim();
+
+    if (!message) {
+      return;
+    }
+
+    submitButton.disabled = true;
+    responseBox.textContent = getTranslation("ai.loading");
+
+    try {
+      const result = await fetch("/api/gemini", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message,
+          language: html.lang || defaultLanguage,
+        }),
+      });
+      const data = await result.json();
+
+      if (!result.ok) {
+        throw new Error(data.error || getTranslation("ai.error"));
+      }
+
+      responseBox.textContent = data.text || getTranslation("ai.error");
+    } catch (error) {
+      responseBox.textContent = error.message || getTranslation("ai.error");
+      responseBox.classList.add("is-error");
+    } finally {
+      submitButton.disabled = false;
+    }
+  });
+}
+
 const yearElement = document.getElementById("year");
 
 if (yearElement) {
@@ -840,4 +989,6 @@ if (yearElement) {
 }
 
 initSliders();
+initMotion();
+initAiAssistant();
 translate(getInitialLanguage());
