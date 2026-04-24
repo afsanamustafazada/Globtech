@@ -42,11 +42,9 @@
         </button>
 
         <div class="nav-panel" id="primary-menu">
+          <a href="index.html#about" data-i18n="nav.about">Haqqımızda</a>
           <a href="index.html#services" data-i18n="nav.services">Xidmətlər</a>
-          <a href="index.html#solutions" data-i18n="nav.solutions">Həllər</a>
           <a href="projects.html" data-i18n="nav.projects">Layihələr</a>
-          <a href="index.html#process" data-i18n="nav.process">Proses</a>
-          <a href="index.html#standards" data-i18n="nav.standards">Standartlar</a>
           <a href="index.html#contact" data-i18n="nav.contact">Əlaqə</a>
           <div class="language-switch" role="group" aria-label="Language">
             <button class="lang-button is-active" type="button" data-lang="az">AZ</button>
@@ -95,7 +93,7 @@
         </div>
       </section>
 
-      <section class="intro-band" aria-label="Company positioning">
+      <section class="intro-band" id="about" aria-label="Company positioning">
         <div class="intro-grid">
           <p data-i18n="intro.one">
             Məqsədimiz sifarişçinin gözləntisini aşan, texniki cəhətdən düzgün və uzunömürlü
@@ -126,6 +124,24 @@
           <div class="slider-shell" data-slider>
             <div class="slider-track">
               <article class="slider-slide is-active">
+                <div class="slider-copy">
+                  <span class="slide-badge" data-i18n="slider.infra.badge">IT və ELV</span>
+                  <h3 data-i18n="slider.infra.title">Mühəndislik və infrastruktur həlləri</h3>
+                  <p data-i18n="slider.infra.text">
+                    Layihələndirmə, təhlükəsizlik, şəbəkə və zəif axın sistemlərini vahid
+                    texniki yanaşmada təqdim edirik.
+                  </p>
+                  <div class="slide-actions">
+                    <a class="button button-primary" href="index.html#services" data-i18n="slider.servicesCta">Xidmətlərə bax</a>
+                    <a class="button button-light" href="projects.html" data-i18n="slider.allProjects">Bütün layihələr</a>
+                  </div>
+                </div>
+                <a class="slider-image-link" href="index.html#services" aria-label="GlobTech infrastructure services">
+                  <img src="assets/images/globtech-hero.png" alt="GlobTech engineering and infrastructure preview" />
+                </a>
+              </article>
+
+              <article class="slider-slide">
                 <div class="slider-copy">
                   <span class="slide-badge" data-i18n="slider.erp.badge">ERP demo</span>
                   <h3 data-i18n="slider.erp.title">Biznes idarəetmə demo paneli</h3>
@@ -376,6 +392,38 @@
             <span>ISO</span>
             <span>NFPA</span>
             <span>ASSA</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section partners-section" id="partners">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="section-kicker" data-i18n="partners.kicker">Partnyorlar</p>
+            <h2 data-i18n="partners.title">Partnyor olduğumuz şirkətlər</h2>
+            <p data-i18n="partners.lead">
+              Layihələrdə istifadə olunan təhlükəsizlik, giriş nəzarəti və mühəndislik sistemləri
+              üzrə etibarlı istehsalçı və texnologiya tərəfdaşları ilə işləyirik.
+            </p>
+          </div>
+
+          <div class="partners-grid" aria-label="Partner companies">
+            <a class="partner-card" href="https://www.dahuasecurity.com/" target="_blank" rel="noopener">
+              <strong>Dahua</strong>
+              <span data-i18n="partners.dahua">Video müşahidə və təhlükəsizlik texnologiyaları</span>
+            </a>
+            <a class="partner-card" href="https://www.zkteco.com/" target="_blank" rel="noopener">
+              <strong>ZKTeco</strong>
+              <span data-i18n="partners.zkteco">Access control, biometrik sistemlər və turniket həlləri</span>
+            </a>
+            <a class="partner-card" href="https://rubezh.ru/" target="_blank" rel="noopener">
+              <strong>Rubezh</strong>
+              <span data-i18n="partners.rubezh">Yanğın siqnalizasiya və bildiriş sistemləri</span>
+            </a>
+            <a class="partner-card" href="https://www.hikvision.com/" target="_blank" rel="noopener">
+              <strong>Hikvision</strong>
+              <span data-i18n="partners.hikvision">CCTV, video analitika və monitorinq həlləri</span>
+            </a>
           </div>
         </div>
       </section>

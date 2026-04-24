@@ -342,6 +342,7 @@ const extraTranslations = {
     "page.demo.title": "ERP demo | GlobTech",
     "page.demo.description":
       "GlobTech ERP demo təqdimatı: real vaxt məlumatları, analitika, inteqrasiya və təhlükəsiz infrastruktur.",
+    "nav.about": "Haqqımızda",
     "nav.projects": "Layihələr",
     "breadcrumbs.home": "Ana səhifə",
     "breadcrumbs.projects": "Layihələr",
@@ -350,6 +351,11 @@ const extraTranslations = {
     "slider.title": "Əsas həlləri və görülən işləri bir baxışda göstərin",
     "slider.lead":
       "Slider hissəsi ERP demo təqdimatı və seçilmiş layihələr üçün hazırlanıb. Şəkilə və düymələrə klik etdikdə ayrıca məlumat səhifələri açılır.",
+    "slider.infra.badge": "IT və ELV",
+    "slider.infra.title": "Mühəndislik və infrastruktur həlləri",
+    "slider.infra.text":
+      "Layihələndirmə, təhlükəsizlik, şəbəkə və zəif axın sistemlərini vahid texniki yanaşmada təqdim edirik.",
+    "slider.servicesCta": "Xidmətlərə bax",
     "slider.erp.badge": "ERP demo",
     "slider.erp.title": "Biznes idarəetmə demo paneli",
     "slider.erp.text":
@@ -362,6 +368,14 @@ const extraTranslations = {
       "Şəbəkə kabinetləri, access point, CCTV, POS xəttləri və test mərhələləri üçün layihə kartı və foto kataloq hazırlandı.",
     "slider.projectCta": "Layihəyə bax",
     "slider.allProjects": "Bütün layihələr",
+    "partners.kicker": "Partnyorlar",
+    "partners.title": "Partnyor olduğumuz şirkətlər",
+    "partners.lead":
+      "Layihələrdə istifadə olunan təhlükəsizlik, giriş nəzarəti və mühəndislik sistemləri üzrə etibarlı istehsalçı və texnologiya tərəfdaşları ilə işləyirik.",
+    "partners.dahua": "Video müşahidə və təhlükəsizlik texnologiyaları",
+    "partners.zkteco": "Access control, biometrik sistemlər və turniket həlləri",
+    "partners.rubezh": "Yanğın siqnalizasiya və bildiriş sistemləri",
+    "partners.hikvision": "CCTV, video analitika və monitorinq həlləri",
     "projects.kicker": "Portfolio",
     "projects.hero.title": "Görülən işlər və layihə siyahısı",
     "projects.hero.lead":
@@ -429,6 +443,7 @@ const extraTranslations = {
     "page.demo.title": "ERP demo | GlobTech",
     "page.demo.description":
       "Демо-презентация GlobTech ERP: данные в реальном времени, аналитика, интеграция и безопасная инфраструктура.",
+    "nav.about": "О нас",
     "nav.projects": "Проекты",
     "breadcrumbs.home": "Главная",
     "breadcrumbs.projects": "Проекты",
@@ -437,6 +452,11 @@ const extraTranslations = {
     "slider.title": "Покажите ключевые решения и выполненные работы в одном блоке",
     "slider.lead":
       "Слайдер подготовлен для ERP demo и избранных проектов. При клике на изображение или кнопки открываются отдельные страницы.",
+    "slider.infra.badge": "IT и ELV",
+    "slider.infra.title": "Инженерные и инфраструктурные решения",
+    "slider.infra.text":
+      "Проектирование, безопасность, сети и слаботочные системы представлены в едином техническом подходе.",
+    "slider.servicesCta": "Смотреть услуги",
     "slider.erp.badge": "ERP demo",
     "slider.erp.title": "Демо-панель управления бизнесом",
     "slider.erp.text":
@@ -449,6 +469,14 @@ const extraTranslations = {
       "Подготовлена карточка проекта и фотокаталог для сетевых шкафов, access point, CCTV, POS-линий и тестирования.",
     "slider.projectCta": "Открыть проект",
     "slider.allProjects": "Все проекты",
+    "partners.kicker": "Партнеры",
+    "partners.title": "Компании, с которыми мы сотрудничаем",
+    "partners.lead":
+      "В проектах мы работаем с надежными производителями и технологическими партнерами в сфере безопасности, контроля доступа и инженерных систем.",
+    "partners.dahua": "Видеонаблюдение и технологии безопасности",
+    "partners.zkteco": "Access control, биометрия и турникетные решения",
+    "partners.rubezh": "Пожарная сигнализация и системы оповещения",
+    "partners.hikvision": "CCTV, видеоаналитика и мониторинг",
     "projects.kicker": "Портфолио",
     "projects.hero.title": "Выполненные работы и список проектов",
     "projects.hero.lead":
@@ -516,6 +544,7 @@ const extraTranslations = {
     "page.demo.title": "ERP demo | GlobTech",
     "page.demo.description":
       "GlobTech ERP demo presentation: real-time data, analytics, integration and secure infrastructure.",
+    "nav.about": "About",
     "nav.projects": "Projects",
     "breadcrumbs.home": "Home",
     "breadcrumbs.projects": "Projects",
@@ -524,6 +553,11 @@ const extraTranslations = {
     "slider.title": "Show key solutions and delivered work at a glance",
     "slider.lead":
       "The slider is prepared for the ERP demo presentation and selected projects. Image and button clicks open separate detail pages.",
+    "slider.infra.badge": "IT and ELV",
+    "slider.infra.title": "Engineering and infrastructure solutions",
+    "slider.infra.text":
+      "Design, security, networking and low-voltage systems are presented through one technical approach.",
+    "slider.servicesCta": "View services",
     "slider.erp.badge": "ERP demo",
     "slider.erp.title": "Business management demo dashboard",
     "slider.erp.text":
@@ -536,6 +570,14 @@ const extraTranslations = {
       "A project card and photo catalog were prepared for network cabinets, access points, CCTV, POS lines and testing stages.",
     "slider.projectCta": "View project",
     "slider.allProjects": "All projects",
+    "partners.kicker": "Partners",
+    "partners.title": "Companies we partner with",
+    "partners.lead":
+      "For security, access control and engineering systems used in projects, we work with trusted manufacturers and technology partners.",
+    "partners.dahua": "Video surveillance and security technologies",
+    "partners.zkteco": "Access control, biometric systems and turnstile solutions",
+    "partners.rubezh": "Fire alarm and notification systems",
+    "partners.hikvision": "CCTV, video analytics and monitoring solutions",
     "projects.kicker": "Portfolio",
     "projects.hero.title": "Delivered work and project list",
     "projects.hero.lead":
@@ -731,6 +773,7 @@ function initSliders() {
     const previousButton = slider.querySelector("[data-slide-prev]");
     const nextButton = slider.querySelector("[data-slide-next]");
     let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
+    let autoplayTimer;
 
     if (!slides.length) {
       return;
@@ -750,6 +793,18 @@ function initSliders() {
       }
     }
 
+    function startAutoplay() {
+      window.clearInterval(autoplayTimer);
+
+      if (slides.length < 2) {
+        return;
+      }
+
+      autoplayTimer = window.setInterval(() => {
+        setActive(activeIndex + 1);
+      }, Number(slider.dataset.interval || 6000));
+    }
+
     if (dotsContainer) {
       dotsContainer.innerHTML = "";
       slides.forEach((_, index) => {
@@ -757,14 +812,24 @@ function initSliders() {
         dot.type = "button";
         dot.className = "slider-dot";
         dot.setAttribute("aria-label", `Slide ${index + 1}`);
-        dot.addEventListener("click", () => setActive(index));
+        dot.addEventListener("click", () => {
+          setActive(index);
+          startAutoplay();
+        });
         dotsContainer.append(dot);
       });
     }
 
-    previousButton?.addEventListener("click", () => setActive(activeIndex - 1));
-    nextButton?.addEventListener("click", () => setActive(activeIndex + 1));
+    previousButton?.addEventListener("click", () => {
+      setActive(activeIndex - 1);
+      startAutoplay();
+    });
+    nextButton?.addEventListener("click", () => {
+      setActive(activeIndex + 1);
+      startAutoplay();
+    });
     setActive(activeIndex);
+    startAutoplay();
   });
 }
 
