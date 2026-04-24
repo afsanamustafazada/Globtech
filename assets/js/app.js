@@ -388,6 +388,13 @@ const extraTranslations = {
     "ai.fileMode":
       "AI paneli üçün saytı server ilə açmaq lazımdır: terminalda npm start işlədin və http://localhost:3000 ünvanına keçin.",
     "ai.error": "AI cavabı alınmadı. API açarını və serveri yoxlayın.",
+    "ai.prompt.office": "Ofis",
+    "ai.prompt.retail": "Retail",
+    "ai.prompt.warehouse": "Anbar",
+    "ai.signal.audit": "Audit",
+    "ai.signal.design": "Dizayn",
+    "ai.signal.deploy": "İcra",
+    "ai.signal.support": "Dəstək",
     "projects.kicker": "Portfolio",
     "projects.hero.title": "Görülən işlər və layihə siyahısı",
     "projects.hero.lead":
@@ -501,6 +508,13 @@ const extraTranslations = {
     "ai.fileMode":
       "Для AI-панели сайт нужно открыть через сервер: запустите npm start и перейдите на http://localhost:3000.",
     "ai.error": "Не удалось получить AI-ответ. Проверьте API-ключ и сервер.",
+    "ai.prompt.office": "Офис",
+    "ai.prompt.retail": "Retail",
+    "ai.prompt.warehouse": "Склад",
+    "ai.signal.audit": "Аудит",
+    "ai.signal.design": "Дизайн",
+    "ai.signal.deploy": "Монтаж",
+    "ai.signal.support": "Поддержка",
     "projects.kicker": "Портфолио",
     "projects.hero.title": "Выполненные работы и список проектов",
     "projects.hero.lead":
@@ -614,6 +628,13 @@ const extraTranslations = {
     "ai.fileMode":
       "The AI panel needs the site to run through the server: run npm start and open http://localhost:3000.",
     "ai.error": "Could not get an AI response. Check the API key and server.",
+    "ai.prompt.office": "Office",
+    "ai.prompt.retail": "Retail",
+    "ai.prompt.warehouse": "Warehouse",
+    "ai.signal.audit": "Audit",
+    "ai.signal.design": "Design",
+    "ai.signal.deploy": "Deploy",
+    "ai.signal.support": "Support",
     "projects.kicker": "Portfolio",
     "projects.hero.title": "Delivered work and project list",
     "projects.hero.lead":
@@ -880,6 +901,7 @@ function initMotion() {
       ".standards-panel span",
       ".partner-card",
       ".ai-card",
+      ".ai-visual-card",
       ".contact-form",
       ".project-card",
       ".gallery-item",
@@ -935,13 +957,81 @@ function initAiAssistant() {
 
   const responseBox = form.querySelector("[data-ai-response]");
   const submitButton = form.querySelector('button[type="submit"]');
+  const promptInput = form.querySelector('textarea[name="message"]');
+  const promptButtons = form.querySelectorAll("[data-ai-prompt]");
+  const visualCard = document.querySelector(".ai-visual-card");
+  const moduleNodes = document.querySelectorAll("[data-ai-module]");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let typingTimer;
+
+  const moduleKeywords = {
+    network: ["network", "şəbək", "sebeke", "wi-fi", "wifi", "lan", "wan", "internet", "switch", "router", "pos"],
+    cctv: ["cctv", "kamera", "camera", "video", "müşahid", "monitorinq", "perimetr"],
+    access: ["access", "giriş", "giris", "turniket", "biometr", "kart", "control", "контроль", "доступ"],
+    fire: ["yanğın", "yangin", "fire", "alarm", "siqnal", "пожар", "эвакуац"],
+    cloud: ["cloud", "bulud", "backup", "server", "devops", "ehtiyat", "резерв", "облак"],
+    service: ["servis", "dəstək", "destek", "support", "sla", "maintenance", "техподдерж", "поддерж"],
+  };
+
+  function activateModules(text) {
+    const normalizedText = text.toLocaleLowerCase("az");
+    let activeCount = 0;
+
+    moduleNodes.forEach((node) => {
+      const moduleName = node.dataset.aiModule;
+      const isActive = moduleKeywords[moduleName]?.some((keyword) => normalizedText.includes(keyword));
+      node.classList.toggle("is-active", Boolean(isActive));
+      activeCount += isActive ? 1 : 0;
+    });
+
+    if (!activeCount) {
+      moduleNodes.forEach((node, index) => {
+        node.classList.toggle("is-active", index < 3);
+      });
+    }
+  }
+
+  function setResponse(text, options = {}) {
+    window.clearInterval(typingTimer);
+    responseBox.classList.toggle("is-typing", Boolean(options.type));
+
+    if (!options.type || prefersReducedMotion) {
+      responseBox.textContent = text;
+      responseBox.classList.remove("is-typing");
+      return;
+    }
+
+    responseBox.textContent = "";
+    let index = 0;
+    typingTimer = window.setInterval(() => {
+      responseBox.textContent += text[index] || "";
+      index += 1;
+
+      if (index >= text.length) {
+        window.clearInterval(typingTimer);
+        responseBox.classList.remove("is-typing");
+      }
+    }, 12);
+  }
+
+  promptButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const language = html.lang || defaultLanguage;
+      const localizedPrompt = button.dataset[`aiPrompt${language[0].toUpperCase()}${language.slice(1)}`];
+      const prompt = localizedPrompt || button.dataset.aiPrompt;
+
+      promptInput.value = prompt;
+      promptInput.focus();
+      activateModules(prompt);
+    });
+  });
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     responseBox.classList.remove("is-error");
 
     if (window.location.protocol === "file:") {
-      responseBox.textContent = getTranslation("ai.fileMode");
+      setResponse(getTranslation("ai.fileMode"));
       responseBox.classList.add("is-error");
       return;
     }
@@ -953,7 +1043,9 @@ function initAiAssistant() {
     }
 
     submitButton.disabled = true;
-    responseBox.textContent = getTranslation("ai.loading");
+    visualCard?.classList.add("is-thinking");
+    activateModules(message);
+    setResponse(getTranslation("ai.loading"));
 
     try {
       const result = await fetch("/api/gemini", {
@@ -972,12 +1064,15 @@ function initAiAssistant() {
         throw new Error(data.error || getTranslation("ai.error"));
       }
 
-      responseBox.textContent = data.text || getTranslation("ai.error");
+      const responseText = data.text || getTranslation("ai.error");
+      activateModules(`${message} ${responseText}`);
+      setResponse(responseText, { type: true });
     } catch (error) {
-      responseBox.textContent = error.message || getTranslation("ai.error");
+      setResponse(error.message || getTranslation("ai.error"));
       responseBox.classList.add("is-error");
     } finally {
       submitButton.disabled = false;
+      visualCard?.classList.remove("is-thinking");
     }
   });
 }

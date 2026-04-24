@@ -439,22 +439,70 @@
             </p>
           </div>
 
-          <form class="ai-card" data-ai-form>
-            <label>
-              <span data-i18n="ai.promptLabel">Obyekt və ehtiyac haqqında qısa yazın</span>
-              <textarea
-                name="message"
-                rows="6"
-                data-i18n-placeholder="ai.promptPlaceholder"
-                placeholder="Məsələn: 3 mərtəbəli ofis üçün Wi-Fi, CCTV və access control lazımdır..."
-                required
-              ></textarea>
-            </label>
-            <button class="button button-primary" type="submit" data-i18n="ai.submit">AI ilə analiz et</button>
-            <div class="ai-response" data-ai-response data-i18n="ai.empty">
-              Cavab burada görünəcək.
+          <div class="ai-studio">
+            <form class="ai-card" data-ai-form>
+              <label>
+                <span data-i18n="ai.promptLabel">Obyekt və ehtiyac haqqında qısa yazın</span>
+                <textarea
+                  name="message"
+                  rows="6"
+                  data-i18n-placeholder="ai.promptPlaceholder"
+                  placeholder="Məsələn: 3 mərtəbəli ofis üçün Wi-Fi, CCTV və access control lazımdır..."
+                  required
+                ></textarea>
+              </label>
+              <div class="ai-prompts" aria-label="AI prompt examples">
+                <button
+                  type="button"
+                  data-i18n="ai.prompt.office"
+                  data-ai-prompt="3 mərtəbəli ofis üçün Wi-Fi, CCTV, access control və server otağı lazımdır. İlkin yanaşmanı yaz."
+                  data-ai-prompt-az="3 mərtəbəli ofis üçün Wi-Fi, CCTV, access control və server otağı lazımdır. İlkin yanaşmanı yaz."
+                  data-ai-prompt-ru="Для 3-этажного офиса нужны Wi-Fi, CCTV, access control и серверная. Опиши первичный подход."
+                  data-ai-prompt-en="A 3-floor office needs Wi-Fi, CCTV, access control and a server room. Write the initial approach."
+                >Ofis</button>
+                <button
+                  type="button"
+                  data-i18n="ai.prompt.retail"
+                  data-ai-prompt="Yeni supermarket filialı üçün POS şəbəkəsi, kamera sistemi, Wi-Fi və texniki dəstək planı lazımdır."
+                  data-ai-prompt-az="Yeni supermarket filialı üçün POS şəbəkəsi, kamera sistemi, Wi-Fi və texniki dəstək planı lazımdır."
+                  data-ai-prompt-ru="Для нового филиала супермаркета нужны POS-сеть, камеры, Wi-Fi и план технической поддержки."
+                  data-ai-prompt-en="A new supermarket branch needs a POS network, cameras, Wi-Fi and a technical support plan."
+                >Retail</button>
+                <button
+                  type="button"
+                  data-i18n="ai.prompt.warehouse"
+                  data-ai-prompt="Anbar və istehsalat obyekti üçün perimetr CCTV, yanğın siqnalizasiya və access control həlli lazımdır."
+                  data-ai-prompt-az="Anbar və istehsalat obyekti üçün perimetr CCTV, yanğın siqnalizasiya və access control həlli lazımdır."
+                  data-ai-prompt-ru="Для склада и производства нужны периметральное CCTV, пожарная сигнализация и access control."
+                  data-ai-prompt-en="A warehouse and production facility needs perimeter CCTV, fire alarm and access control."
+                >Anbar</button>
+              </div>
+              <button class="button button-primary" type="submit" data-i18n="ai.submit">AI ilə analiz et</button>
+              <div class="ai-response" data-ai-response data-i18n="ai.empty">
+                Cavab burada görünəcək.
+              </div>
+            </form>
+
+            <div class="ai-visual-card" aria-hidden="true">
+              <div class="ai-orbit">
+                <span class="ai-core">AI</span>
+                <span class="ai-ring ring-one"></span>
+                <span class="ai-ring ring-two"></span>
+                <span class="ai-node node-network" data-ai-module="network">Network</span>
+                <span class="ai-node node-cctv" data-ai-module="cctv">CCTV</span>
+                <span class="ai-node node-access" data-ai-module="access">Access</span>
+                <span class="ai-node node-fire" data-ai-module="fire">Fire</span>
+                <span class="ai-node node-cloud" data-ai-module="cloud">Cloud</span>
+                <span class="ai-node node-service" data-ai-module="service">Service</span>
+              </div>
+              <div class="ai-signal-list">
+                <span data-i18n="ai.signal.audit">Audit</span>
+                <span data-i18n="ai.signal.design">Dizayn</span>
+                <span data-i18n="ai.signal.deploy">İcra</span>
+                <span data-i18n="ai.signal.support">Dəstək</span>
+              </div>
             </div>
-          </form>
+          </div>
         </div>
       </section>
 
