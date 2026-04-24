@@ -132,6 +132,53 @@
   }
 }
 
+@keyframes heroCopyIn {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroMetricIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introBar {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes metricPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translateX(-18%);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(18%);
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -414,6 +461,30 @@ textarea {
   color: #fff;
 }
 
+.hero-inner .eyebrow,
+.hero-inner h1,
+.hero-inner .hero-lead,
+.hero-inner .hero-actions {
+  opacity: 0;
+  animation: heroCopyIn 720ms ease forwards;
+}
+
+.hero-inner .eyebrow {
+  animation-delay: 120ms;
+}
+
+.hero-inner h1 {
+  animation-delay: 260ms;
+}
+
+.hero-inner .hero-lead {
+  animation-delay: 420ms;
+}
+
+.hero-inner .hero-actions {
+  animation-delay: 580ms;
+}
+
 .eyebrow,
 .section-kicker {
   margin: 0 0 14px;
@@ -526,12 +597,41 @@ textarea {
 }
 
 .metric {
+  position: relative;
+  overflow: hidden;
   min-height: 92px;
   padding: 18px 24px;
   display: grid;
   place-items: center;
   text-align: center;
   border-right: 1px solid rgba(255, 255, 255, 0.12);
+  opacity: 0;
+  animation: heroMetricIn 640ms ease forwards;
+}
+
+.metric:nth-child(1) {
+  animation-delay: 740ms;
+}
+
+.metric:nth-child(2) {
+  animation-delay: 860ms;
+}
+
+.metric:nth-child(3) {
+  animation-delay: 980ms;
+}
+
+.metric::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  width: 76%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red), var(--teal), transparent);
+  opacity: 0.68;
+  transform: translateX(-18%);
+  animation: metricPulse 4s ease-in-out infinite;
 }
 
 .metric:last-child {
@@ -539,12 +639,16 @@ textarea {
 }
 
 .metric strong {
+  position: relative;
+  z-index: 1;
   color: #fff;
   font-size: 1.55rem;
   line-height: 1;
 }
 
 .metric span {
+  position: relative;
+  z-index: 1;
   color: rgba(255, 255, 255, 0.72);
   font-size: 0.9rem;
 }
@@ -564,12 +668,49 @@ textarea {
 }
 
 .intro-grid p {
+  position: relative;
+  overflow: hidden;
   min-height: 160px;
   margin: 0;
   padding: 32px;
   background: var(--ink);
   color: rgba(255, 255, 255, 0.78);
   font-weight: 600;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.intro-grid p::before {
+  content: "";
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--red), var(--teal));
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: introBar 850ms ease forwards;
+}
+
+.intro-grid p:nth-child(1)::before {
+  animation-delay: 900ms;
+}
+
+.intro-grid p:nth-child(2)::before {
+  animation-delay: 1050ms;
+}
+
+.intro-grid p:nth-child(3)::before {
+  animation-delay: 1200ms;
+}
+
+.intro-grid p:hover {
+  background: #141d27;
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .slider-heading {
@@ -1577,6 +1718,15 @@ textarea {
   }
 
   .motion-ready .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-inner .eyebrow,
+  .hero-inner h1,
+  .hero-inner .hero-lead,
+  .hero-inner .hero-actions,
+  .metric {
     opacity: 1;
     transform: none;
   }
