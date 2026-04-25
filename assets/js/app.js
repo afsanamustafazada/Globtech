@@ -102,6 +102,7 @@ const translations = {
       "Qısa texniki məlumat göndərin, komanda ilkin yanaşmanı, riskləri və növbəti addımı sizinlə razılaşdırsın.",
     "contact.address": "H. Əliyev pr. 187C, BMS Plaza, 12-ci mərtəbə",
     "contact.hours": "B.e - C. 09:00 - 18:00",
+    "contact.whatsapp": "WhatsApp ilə əlaqə saxlayın",
     "form.name": "Adınız",
     "form.namePlaceholder": "Ad və soyad",
     "form.phone": "Telefon və ya e-poçt",
@@ -109,6 +110,7 @@ const translations = {
     "form.project": "Layihə haqqında",
     "form.projectPlaceholder": "Obyekt tipi, sistemlər, mövcud vəziyyət",
     "form.submit": "Göndər",
+    "form.whatsapp": "Bizə WhatsApp-da yazın",
     "footer.top": "Yuxarı qayıt",
   },
   ru: {
@@ -210,6 +212,7 @@ const translations = {
       "Отправьте краткую техническую информацию, и команда согласует с вами первичный подход, риски и следующий шаг.",
     "contact.address": "пр. Г. Алиева 187C, BMS Plaza, 12-й этаж",
     "contact.hours": "Пн - Пт 09:00 - 18:00",
+    "contact.whatsapp": "Связаться через WhatsApp",
     "form.name": "Ваше имя",
     "form.namePlaceholder": "Имя и фамилия",
     "form.phone": "Телефон или e-mail",
@@ -217,6 +220,7 @@ const translations = {
     "form.project": "О проекте",
     "form.projectPlaceholder": "Тип объекта, системы, текущее состояние",
     "form.submit": "Отправить",
+    "form.whatsapp": "Написать в WhatsApp",
     "footer.top": "Наверх",
   },
   en: {
@@ -317,6 +321,7 @@ const translations = {
       "Send a short technical note and the team will align the initial approach, risks and next step with you.",
     "contact.address": "187C H. Aliyev Ave., BMS Plaza, 12th floor",
     "contact.hours": "Mon - Fri 09:00 - 18:00",
+    "contact.whatsapp": "Contact us on WhatsApp",
     "form.name": "Your name",
     "form.namePlaceholder": "Full name",
     "form.phone": "Phone or email",
@@ -324,6 +329,7 @@ const translations = {
     "form.project": "About the project",
     "form.projectPlaceholder": "Facility type, systems, current state",
     "form.submit": "Send",
+    "form.whatsapp": "Message us on WhatsApp",
     "footer.top": "Back to top",
   },
 };
@@ -395,6 +401,14 @@ const extraTranslations = {
     "ai.signal.design": "Dizayn",
     "ai.signal.deploy": "İcra",
     "ai.signal.support": "Dəstək",
+    "chatbot.open": "Sual ver",
+    "chatbot.title": "GlobTech AI Chat",
+    "chatbot.subtitle": "Layihə və xidmətlər haqqında soruşun",
+    "chatbot.welcome": "Salam! IT infrastruktur, CCTV, access control, yanğın sistemi və servis haqqında sualınızı yazın.",
+    "chatbot.placeholder": "Sualınızı yazın...",
+    "chatbot.inputLabel": "AI sualınız",
+    "chatbot.submit": "Sualı göndər",
+    "chatbot.close": "Chatbotu bağla",
     "projects.kicker": "Portfolio",
     "projects.hero.title": "Görülən işlər və layihə siyahısı",
     "projects.hero.lead":
@@ -515,6 +529,14 @@ const extraTranslations = {
     "ai.signal.design": "Дизайн",
     "ai.signal.deploy": "Монтаж",
     "ai.signal.support": "Поддержка",
+    "chatbot.open": "Спросить",
+    "chatbot.title": "GlobTech AI Chat",
+    "chatbot.subtitle": "Задайте вопрос о проектах и услугах",
+    "chatbot.welcome": "Здравствуйте! Напишите вопрос об IT-инфраструктуре, CCTV, access control, пожарных системах или сервисе.",
+    "chatbot.placeholder": "Напишите вопрос...",
+    "chatbot.inputLabel": "Ваш вопрос AI",
+    "chatbot.submit": "Отправить вопрос",
+    "chatbot.close": "Закрыть чат",
     "projects.kicker": "Портфолио",
     "projects.hero.title": "Выполненные работы и список проектов",
     "projects.hero.lead":
@@ -635,6 +657,14 @@ const extraTranslations = {
     "ai.signal.design": "Design",
     "ai.signal.deploy": "Deploy",
     "ai.signal.support": "Support",
+    "chatbot.open": "Ask AI",
+    "chatbot.title": "GlobTech AI Chat",
+    "chatbot.subtitle": "Ask about projects and services",
+    "chatbot.welcome": "Hi! Ask about IT infrastructure, CCTV, access control, fire systems or service support.",
+    "chatbot.placeholder": "Write your question...",
+    "chatbot.inputLabel": "Your AI question",
+    "chatbot.submit": "Send question",
+    "chatbot.close": "Close chatbot",
     "projects.kicker": "Portfolio",
     "projects.hero.title": "Delivered work and project list",
     "projects.hero.lead":
@@ -1009,103 +1039,79 @@ function getTranslation(key) {
 }
 
 function initAiAssistant() {
-  const form = document.querySelector("[data-ai-form]");
+  const chat = document.querySelector("[data-ai-chat]");
 
-  if (!form) {
+  if (!chat) {
     return;
   }
 
-  const responseBox = form.querySelector("[data-ai-response]");
+  const toggle = chat.querySelector("[data-ai-chat-toggle]");
+  const closeButton = chat.querySelector("[data-ai-chat-close]");
+  const panel = chat.querySelector("[data-ai-chat-panel]");
+  const form = chat.querySelector("[data-ai-chat-form]");
+  const input = form.querySelector('textarea[name="message"]');
   const submitButton = form.querySelector('button[type="submit"]');
-  const promptInput = form.querySelector('textarea[name="message"]');
-  const promptButtons = form.querySelectorAll("[data-ai-prompt]");
-  const visualCard = document.querySelector(".ai-visual-card");
-  const moduleNodes = document.querySelectorAll("[data-ai-module]");
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let typingTimer;
+  const messages = chat.querySelector("[data-ai-chat-messages]");
 
-  const moduleKeywords = {
-    network: ["network", "şəbək", "sebeke", "wi-fi", "wifi", "lan", "wan", "internet", "switch", "router", "pos"],
-    cctv: ["cctv", "kamera", "camera", "video", "müşahid", "monitorinq", "perimetr"],
-    access: ["access", "giriş", "giris", "turniket", "biometr", "kart", "control", "контроль", "доступ"],
-    fire: ["yanğın", "yangin", "fire", "alarm", "siqnal", "пожар", "эвакуац"],
-    cloud: ["cloud", "bulud", "backup", "server", "devops", "ehtiyat", "резерв", "облак"],
-    service: ["servis", "dəstək", "destek", "support", "sla", "maintenance", "техподдерж", "поддерж"],
-  };
+  function setOpen(isOpen) {
+    chat.classList.toggle("is-open", isOpen);
+    toggle.setAttribute("aria-expanded", String(isOpen));
 
-  function activateModules(text) {
-    const normalizedText = text.toLocaleLowerCase("az");
-    let activeCount = 0;
-
-    moduleNodes.forEach((node) => {
-      const moduleName = node.dataset.aiModule;
-      const isActive = moduleKeywords[moduleName]?.some((keyword) => normalizedText.includes(keyword));
-      node.classList.toggle("is-active", Boolean(isActive));
-      activeCount += isActive ? 1 : 0;
-    });
-
-    if (!activeCount) {
-      moduleNodes.forEach((node, index) => {
-        node.classList.toggle("is-active", index < 3);
-      });
+    if (isOpen) {
+      window.setTimeout(() => input.focus(), 80);
     }
   }
 
-  function setResponse(text, options = {}) {
-    window.clearInterval(typingTimer);
-    responseBox.classList.toggle("is-typing", Boolean(options.type));
-
-    if (!options.type || prefersReducedMotion) {
-      responseBox.textContent = text;
-      responseBox.classList.remove("is-typing");
-      return;
-    }
-
-    responseBox.textContent = "";
-    let index = 0;
-    typingTimer = window.setInterval(() => {
-      responseBox.textContent += text[index] || "";
-      index += 1;
-
-      if (index >= text.length) {
-        window.clearInterval(typingTimer);
-        responseBox.classList.remove("is-typing");
-      }
-    }, 12);
+  function addMessage(text, type = "bot") {
+    const message = document.createElement("div");
+    message.className = `ai-chat-message ai-chat-message-${type}`;
+    message.textContent = text;
+    messages.append(message);
+    messages.scrollTop = messages.scrollHeight;
+    return message;
   }
 
-  promptButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const language = html.lang || defaultLanguage;
-      const localizedPrompt = button.dataset[`aiPrompt${language[0].toUpperCase()}${language.slice(1)}`];
-      const prompt = localizedPrompt || button.dataset.aiPrompt;
+  toggle.addEventListener("click", () => {
+    setOpen(!chat.classList.contains("is-open"));
+  });
 
-      promptInput.value = prompt;
-      promptInput.focus();
-      activateModules(prompt);
-    });
+  closeButton.addEventListener("click", () => {
+    setOpen(false);
+  });
+
+  panel.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setOpen(false);
+    }
+  });
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      form.requestSubmit();
+    }
   });
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    responseBox.classList.remove("is-error");
-
-    if (window.location.protocol === "file:") {
-      setResponse(getTranslation("ai.fileMode"));
-      responseBox.classList.add("is-error");
-      return;
-    }
-
     const message = new FormData(form).get("message")?.toString().trim();
 
     if (!message) {
       return;
     }
 
+    addMessage(message, "user");
+    input.value = "";
+
+    if (window.location.protocol === "file:") {
+      addMessage(getTranslation("ai.fileMode"), "error");
+      return;
+    }
+
     submitButton.disabled = true;
-    visualCard?.classList.add("is-thinking");
-    activateModules(message);
-    setResponse(getTranslation("ai.loading"));
+    chat.classList.add("is-thinking");
+    const loadingMessage = addMessage(getTranslation("ai.loading"), "bot");
+    loadingMessage.classList.add("is-typing");
 
     try {
       const result = await fetch("/api/gemini", {
@@ -1124,15 +1130,16 @@ function initAiAssistant() {
         throw new Error(data.error || getTranslation("ai.error"));
       }
 
-      const responseText = data.text || getTranslation("ai.error");
-      activateModules(`${message} ${responseText}`);
-      setResponse(responseText, { type: true });
+      loadingMessage.textContent = data.text || getTranslation("ai.error");
+      loadingMessage.classList.remove("is-typing");
     } catch (error) {
-      setResponse(error.message || getTranslation("ai.error"));
-      responseBox.classList.add("is-error");
+      loadingMessage.textContent = error.message || getTranslation("ai.error");
+      loadingMessage.classList.remove("is-typing");
+      loadingMessage.classList.add("ai-chat-message-error");
     } finally {
       submitButton.disabled = false;
-      visualCard?.classList.remove("is-thinking");
+      chat.classList.remove("is-thinking");
+      messages.scrollTop = messages.scrollHeight;
     }
   });
 }
