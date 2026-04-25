@@ -78,21 +78,6 @@ function readJsonBody(request) {
   });
 }
 
-function isLocalRequest(request) {
-  const address = request.socket.remoteAddress || "";
-  return address === "127.0.0.1" || address === "::1" || address === "::ffff:127.0.0.1";
-}
-
-function canEditSettings(request) {
-  const adminToken = process.env.ADMIN_TOKEN;
-
-  if (!adminToken) {
-    return isLocalRequest(request);
-  }
-
-  return request.headers["x-admin-token"] === adminToken;
-}
-
 async function handleSettings(request, response) {
   if (request.method === "GET") {
     fs.readFile(settingsFile, "utf8", (error, content) => {
@@ -112,42 +97,7 @@ async function handleSettings(request, response) {
     return;
   }
 
-  if (request.method !== "PUT") {
-    sendJson(response, 405, { error: "Method not allowed." });
-    return;
-  }
-
-  if (!canEditSettings(request)) {
-    sendJson(response, 401, { error: "Admin token is required." });
-    return;
-  }
-
-  try {
-    const settings = await readJsonBody(request);
-
-    if (!settings || typeof settings !== "object" || Array.isArray(settings)) {
-      sendJson(response, 400, { error: "Invalid settings payload." });
-      return;
-    }
-
-    fs.mkdir(path.dirname(settingsFile), { recursive: true }, (mkdirError) => {
-      if (mkdirError) {
-        sendJson(response, 500, { error: "Could not create data directory." });
-        return;
-      }
-
-      fs.writeFile(settingsFile, `${JSON.stringify(settings, null, 2)}\n`, "utf8", (writeError) => {
-        if (writeError) {
-          sendJson(response, 500, { error: "Could not save settings." });
-          return;
-        }
-
-        sendJson(response, 200, { ok: true, settings });
-      });
-    });
-  } catch (error) {
-    sendJson(response, 400, { error: error.message || "Invalid JSON body." });
-  }
+  sendJson(response, 405, { error: "Method not allowed." });
 }
 
 function getStaticFilePath(requestUrl) {

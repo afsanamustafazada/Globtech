@@ -800,14 +800,25 @@ async function loadSiteSettings() {
     return;
   }
 
-  try {
-    const response = await fetch("/api/settings", { cache: "no-store" });
+  async function fetchSettings(url) {
+    const response = await fetch(url, { cache: "no-store" });
 
-    if (response.ok) {
-      siteSettings = await response.json();
+    if (!response.ok) {
+      throw new Error("Settings unavailable.");
     }
+
+    return response.json();
+  }
+
+  try {
+    siteSettings = await fetchSettings("/api/settings");
+    return;
   } catch {
-    siteSettings = null;
+    try {
+      siteSettings = await fetchSettings("data/site-settings.json");
+    } catch {
+      siteSettings = null;
+    }
   }
 }
 

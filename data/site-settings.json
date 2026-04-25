@@ -199,6 +199,42 @@
           "secondaryHref": "projects.html",
           "alt": "Retail IT infrastructure project preview"
         }
+      },
+      {
+        "id": "araz-project-copy-1777104713502",
+        "enabled": false,
+        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "href": "project-detail.html?id=araz-supermarket",
+        "az": {
+          "badge": "Seçilmiş layihə",
+          "title": "Araz Supermarket filiallarında IT infrastruktur",
+          "text": "Şəbəkə kabinetləri, access point, CCTV, POS xətləri və test mərhələləri üçün layihə kartı və foto kataloq hazırlandı.",
+          "primaryLabel": "Layihəyə bax",
+          "primaryHref": "project-detail.html?id=araz-supermarket",
+          "secondaryLabel": "Bütün layihələr",
+          "secondaryHref": "projects.html",
+          "alt": "Retail IT infrastruktur layihəsi"
+        },
+        "ru": {
+          "badge": "Избранный проект",
+          "title": "IT-инфраструктура в филиалах Araz Supermarket",
+          "text": "Подготовлена карточка проекта и фотокаталог для сетевых шкафов, access point, CCTV, POS-линий и тестирования.",
+          "primaryLabel": "Открыть проект",
+          "primaryHref": "project-detail.html?id=araz-supermarket",
+          "secondaryLabel": "Все проекты",
+          "secondaryHref": "projects.html",
+          "alt": "Проект retail IT-инфраструктуры"
+        },
+        "en": {
+          "badge": "Featured project",
+          "title": "IT infrastructure for Araz Supermarket branches",
+          "text": "A project card and photo catalog were prepared for network cabinets, access points, CCTV, POS lines and testing stages.",
+          "primaryLabel": "View project",
+          "primaryHref": "project-detail.html?id=araz-supermarket",
+          "secondaryLabel": "All projects",
+          "secondaryHref": "projects.html",
+          "alt": "Retail IT infrastructure project preview"
+        }
       }
     ]
   },
@@ -229,8 +265,16 @@
           "assets/images/projects/araz-supermarket/network-cabinet.png"
         ],
         "az": {
-          "tags": ["Retail", "IT infrastruktur", "Filial şəbəkəsi"],
-          "meta": ["Audit", "Montaj", "Test və təhvil"],
+          "tags": [
+            "Retail",
+            "IT infrastruktur",
+            "Filial şəbəkəsi"
+          ],
+          "meta": [
+            "Audit",
+            "Montaj",
+            "Test və təhvil"
+          ],
           "title": "Araz Supermarket MMC filiallarında IT infrastrukturun qurulması",
           "summary": "Filiallarda şəbəkə kabinetləri, strukturlaşdırılmış kabel sistemi, Wi-Fi, CCTV və POS xətlərinin qurulması üçün nümunə layihə kartı.",
           "scopeTitle": "Görülən işlərin əhatəsi",
@@ -238,8 +282,16 @@
           "galleryTitle": "Foto kataloq"
         },
         "ru": {
-          "tags": ["Retail", "IT-инфраструктура", "Сеть филиалов"],
-          "meta": ["Аудит", "Монтаж", "Тест и сдача"],
+          "tags": [
+            "Retail",
+            "IT-инфраструктура",
+            "Сеть филиалов"
+          ],
+          "meta": [
+            "Аудит",
+            "Монтаж",
+            "Тест и сдача"
+          ],
           "title": "Построение IT-инфраструктуры в филиалах Araz Supermarket MMC",
           "summary": "Пример карточки проекта по построению сетевых шкафов, СКС, Wi-Fi, CCTV и POS-линий в филиалах.",
           "scopeTitle": "Объем выполненных работ",
@@ -247,12 +299,120 @@
           "galleryTitle": "Фотокаталог"
         },
         "en": {
-          "tags": ["Retail", "IT infrastructure", "Branch network"],
-          "meta": ["Audit", "Installation", "Testing and handover"],
+          "tags": [
+            "Retail",
+            "IT infrastructure",
+            "Branch network"
+          ],
+          "meta": [
+            "Audit",
+            "Installation",
+            "Testing and handover"
+          ],
           "title": "IT infrastructure deployment across Araz Supermarket MMC branches",
           "summary": "A sample project card for network cabinets, structured cabling, Wi-Fi, CCTV and POS lines across branches.",
           "scopeTitle": "Scope of delivered work",
           "scope": "The project focuses on network infrastructure supporting daily branch sales operations: cabinets, switching, patch panels, cable lines, access points, CCTV and POS zones.",
+          "galleryTitle": "Photo catalog"
+        }
+      },
+      {
+        "id": "project-1777104670323",
+        "enabled": false,
+        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "gallery": [
+          "assets/images/projects/araz-supermarket/network-cabinet.png"
+        ],
+        "az": {
+          "tags": [
+            "IT infrastruktur"
+          ],
+          "meta": [
+            "Audit",
+            "Montaj"
+          ],
+          "title": "Yeni layihə",
+          "summary": "Layihə haqqında qısa məlumat.",
+          "scopeTitle": "Görülən işlərin əhatəsi",
+          "scope": "Layihədə görülən əsas işləri burada yaz.",
+          "galleryTitle": "Foto kataloq"
+        },
+        "ru": {
+          "tags": [
+            "IT-инфраструктура"
+          ],
+          "meta": [
+            "Аудит",
+            "Монтаж"
+          ],
+          "title": "Новый проект",
+          "summary": "Краткая информация о проекте.",
+          "scopeTitle": "Объем работ",
+          "scope": "Опишите основные выполненные работы.",
+          "galleryTitle": "Фотокаталог"
+        },
+        "en": {
+          "tags": [
+            "IT infrastructure"
+          ],
+          "meta": [
+            "Audit",
+            "Installation"
+          ],
+          "title": "New project",
+          "summary": "Short project description.",
+          "scopeTitle": "Scope of delivered work",
+          "scope": "Describe the main delivered work here.",
+          "galleryTitle": "Photo catalog"
+        }
+      },
+      {
+        "id": "project-1777104678667",
+        "enabled": false,
+        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "gallery": [
+          "assets/images/projects/araz-supermarket/network-cabinet.png"
+        ],
+        "az": {
+          "tags": [
+            "IT infrastruktur"
+          ],
+          "meta": [
+            "Audit",
+            "Montaj"
+          ],
+          "title": "Yeni layihə",
+          "summary": "Layihə haqqında qısa məlumat.",
+          "scopeTitle": "Görülən işlərin əhatəsi",
+          "scope": "Layihədə görülən əsas işləri burada yaz.",
+          "galleryTitle": "Foto kataloq"
+        },
+        "ru": {
+          "tags": [
+            "IT-инфраструктура"
+          ],
+          "meta": [
+            "Аудит",
+            "Монтаж"
+          ],
+          "title": "Новый проект",
+          "summary": "Краткая информация о проекте.",
+          "scopeTitle": "Объем работ",
+          "scope": "Опишите основные выполненные работы.",
+          "galleryTitle": "Фотокаталог"
+        },
+        "en": {
+          "tags": [
+            "IT infrastructure"
+          ],
+          "meta": [
+            "Audit",
+            "Installation"
+          ],
+          "title": "New project",
+          "summary": "Short project description.",
+          "scopeTitle": "Scope of delivered work",
+          "scope": "Describe the main delivered work here.",
           "galleryTitle": "Photo catalog"
         }
       }
@@ -265,8 +425,8 @@
       "theme": "light",
       "az": {
         "kicker": "Yeni bölmə",
-        "title": "Admin paneldən əlavə olunan bölmə",
-        "lead": "Bu bölməni admin paneldən aktiv edib mətnini dəyişə bilərsiniz.",
+        "title": "Sayta əlavə olunan bölmə",
+        "lead": "Bu bölmənin mətnini data/site-settings.json faylından dəyişə bilərsiniz.",
         "buttonLabel": "Əlaqə saxla",
         "buttonHref": "index.html#contact"
       },
@@ -279,8 +439,8 @@
       },
       "en": {
         "kicker": "New section",
-        "title": "Section added from the admin panel",
-        "lead": "This section can be enabled and edited from the admin panel.",
+        "title": "Section added to the site",
+        "lead": "This section can be edited in the data/site-settings.json file.",
         "buttonLabel": "Contact us",
         "buttonHref": "index.html#contact"
       }

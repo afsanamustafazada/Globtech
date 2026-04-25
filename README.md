@@ -14,6 +14,20 @@ Static multilingual rebuild for GlobTech Consulting & Engineering.
 - `assets/images/slider/erp-demo-slide.png` - homepage slider image supplied for the demo slide
 - `assets/images/projects/araz-supermarket/` - project gallery visuals
 
+## cPanel Upload
+
+For a normal cPanel hosting account, upload these static site files into `public_html` or the folder connected to `gtcoen.com`:
+
+- `index.html`
+- `projects.html`
+- `project-detail.html`
+- `project-araz-supermarket.html`
+- `erp-demo.html`
+- `assets/`
+- `data/`
+
+Before replacing the old site, download a backup of the current `public_html` folder. Then delete or move the old files and upload the new files above. The site reads editable content from `data/site-settings.json` directly on static hosting.
+
 ## Preview
 
 For the static pages only, open `index.html` in a browser. Language can be switched with the AZ/RU/EN control, or by using:
@@ -31,12 +45,7 @@ For the AI assistant panel, run the site through the Node server:
 
 The Gemini key is used only by `server.js`; it is not exposed to frontend JavaScript.
 
-## Admin Panel
-
-Open `http://localhost:3000/admin.html` to edit common site content without touching code. The panel saves changes into `data/site-settings.json`; the website reads that file on load.
-
-- For local use, the admin token can stay empty.
-- For a public Node deployment, set `ADMIN_TOKEN` in `.env` and enter that token in the admin panel before saving.
+On basic static cPanel hosting, the AI chatbot backend will not run by itself. It needs either cPanel Node.js App support with `server.js`, or a separate backend/proxy for `/api/gemini`.
 
 ## Source Notes
 
