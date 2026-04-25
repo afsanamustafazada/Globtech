@@ -117,7 +117,8 @@
 }
 
 .admin-panel input,
-.admin-panel textarea {
+.admin-panel textarea,
+.admin-panel select {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -132,9 +133,91 @@
 }
 
 .admin-panel input:focus,
-.admin-panel textarea:focus {
+.admin-panel textarea:focus,
+.admin-panel select:focus {
   border-color: var(--teal);
   box-shadow: 0 0 0 4px rgba(15, 143, 130, 0.14);
+}
+
+.admin-note {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 650;
+}
+
+.admin-array-head,
+.admin-array-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.admin-array-head {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+
+.admin-array-head div,
+.admin-array-title > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-array-head span {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.admin-array-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.admin-array-item {
+  display: grid;
+  gap: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f7f9fc;
+  padding: 16px;
+}
+
+.admin-array-title strong {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.admin-array-fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.admin-check {
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  align-self: end;
+  min-height: 46px;
+}
+
+.admin-check input {
+  width: 20px;
+  height: 20px;
+}
+
+.button-danger {
+  background: #fff;
+  color: #c83725;
+  border-color: rgba(200, 55, 37, 0.35);
+}
+
+.button-danger:hover,
+.button-danger:focus-visible {
+  border-color: #c83725;
 }
 
 .admin-actions {
@@ -174,7 +257,8 @@
   }
 
   .admin-lang-grid,
-  .admin-two-grid {
+  .admin-two-grid,
+  .admin-array-fields {
     grid-template-columns: 1fr;
   }
 }
@@ -192,5 +276,19 @@
   .admin-actions {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .admin-array-head,
+  .admin-array-title {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-array-title > div {
+    width: 100%;
+  }
+
+  .admin-array-title .button {
+    flex: 1;
   }
 }

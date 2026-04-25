@@ -74,5 +74,216 @@
       "welcome": "Hi! Ask about IT infrastructure, CCTV, access control, fire systems or service support.",
       "placeholder": "Write your question..."
     }
-  }
+  },
+  "slider": {
+    "az": {
+      "kicker": "Demo və layihə vitrini",
+      "title": "Əsas həlləri və görülən işləri bir baxışda göstərin",
+      "lead": "Slider hissəsi demo təqdimatı və seçilmiş layihələr üçün hazırlanıb. Şəkilə və düymələrə klik etdikdə ayrıca məlumat səhifələri açılır."
+    },
+    "ru": {
+      "kicker": "Демо и витрина проектов",
+      "title": "Покажите ключевые решения и выполненные работы в одном блоке",
+      "lead": "Слайдер подготовлен для demo-презентации и избранных проектов. При клике на изображение или кнопки открываются отдельные страницы."
+    },
+    "en": {
+      "kicker": "Demo and project showcase",
+      "title": "Show key solutions and delivered work at a glance",
+      "lead": "The slider is prepared for demo presentation and selected projects. Image and button clicks open separate detail pages."
+    },
+    "slides": [
+      {
+        "id": "infra",
+        "enabled": true,
+        "image": "assets/images/globtech-hero.png",
+        "href": "index.html#services",
+        "az": {
+          "badge": "IT və ELV",
+          "title": "Mühəndislik və infrastruktur həlləri",
+          "text": "Layihələndirmə, təhlükəsizlik, şəbəkə və zəif axın sistemlərini vahid texniki yanaşmada təqdim edirik.",
+          "primaryLabel": "Xidmətlərə bax",
+          "primaryHref": "index.html#services",
+          "secondaryLabel": "Bütün layihələr",
+          "secondaryHref": "projects.html",
+          "alt": "GlobTech mühəndislik və infrastruktur təqdimatı"
+        },
+        "ru": {
+          "badge": "IT и ELV",
+          "title": "Инженерные и инфраструктурные решения",
+          "text": "Проектирование, безопасность, сети и слаботочные системы представлены в едином техническом подходе.",
+          "primaryLabel": "Смотреть услуги",
+          "primaryHref": "index.html#services",
+          "secondaryLabel": "Все проекты",
+          "secondaryHref": "projects.html",
+          "alt": "Превью инженерных и инфраструктурных услуг GlobTech"
+        },
+        "en": {
+          "badge": "IT and ELV",
+          "title": "Engineering and infrastructure solutions",
+          "text": "Design, security, networking and low-voltage systems are presented through one technical approach.",
+          "primaryLabel": "View services",
+          "primaryHref": "index.html#services",
+          "secondaryLabel": "All projects",
+          "secondaryHref": "projects.html",
+          "alt": "GlobTech engineering and infrastructure preview"
+        }
+      },
+      {
+        "id": "erp-demo",
+        "enabled": true,
+        "image": "assets/images/slider/erp-demo-slide.png",
+        "href": "erp-demo.html",
+        "az": {
+          "badge": "ERP demo",
+          "title": "Biznes idarəetmə demo paneli",
+          "text": "Real vaxt məlumatları, analitika, inteqrasiya və təhlükəsiz infrastruktur mesajını ayrıca demo səhifəsində izah edirik.",
+          "primaryLabel": "Daha ətraflı",
+          "primaryHref": "erp-demo.html",
+          "secondaryLabel": "Demo versiyanı sına",
+          "secondaryHref": "erp-demo.html#request",
+          "alt": "ERP demo təqdimat görüntüsü"
+        },
+        "ru": {
+          "badge": "ERP demo",
+          "title": "Демо-панель управления бизнесом",
+          "text": "Данные в реальном времени, аналитика, интеграции и безопасная инфраструктура объясняются на отдельной demo-странице.",
+          "primaryLabel": "Подробнее",
+          "primaryHref": "erp-demo.html",
+          "secondaryLabel": "Попробовать demo",
+          "secondaryHref": "erp-demo.html#request",
+          "alt": "Превью ERP demo"
+        },
+        "en": {
+          "badge": "ERP demo",
+          "title": "Business management demo dashboard",
+          "text": "Real-time data, analytics, integration and secure infrastructure messaging is explained on a separate demo page.",
+          "primaryLabel": "Learn more",
+          "primaryHref": "erp-demo.html",
+          "secondaryLabel": "Try demo version",
+          "secondaryHref": "erp-demo.html#request",
+          "alt": "ERP demo presentation preview"
+        }
+      },
+      {
+        "id": "araz-project",
+        "enabled": true,
+        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "href": "project-detail.html?id=araz-supermarket",
+        "az": {
+          "badge": "Seçilmiş layihə",
+          "title": "Araz Supermarket filiallarında IT infrastruktur",
+          "text": "Şəbəkə kabinetləri, access point, CCTV, POS xətləri və test mərhələləri üçün layihə kartı və foto kataloq hazırlandı.",
+          "primaryLabel": "Layihəyə bax",
+          "primaryHref": "project-detail.html?id=araz-supermarket",
+          "secondaryLabel": "Bütün layihələr",
+          "secondaryHref": "projects.html",
+          "alt": "Retail IT infrastruktur layihəsi"
+        },
+        "ru": {
+          "badge": "Избранный проект",
+          "title": "IT-инфраструктура в филиалах Araz Supermarket",
+          "text": "Подготовлена карточка проекта и фотокаталог для сетевых шкафов, access point, CCTV, POS-линий и тестирования.",
+          "primaryLabel": "Открыть проект",
+          "primaryHref": "project-detail.html?id=araz-supermarket",
+          "secondaryLabel": "Все проекты",
+          "secondaryHref": "projects.html",
+          "alt": "Проект retail IT-инфраструктуры"
+        },
+        "en": {
+          "badge": "Featured project",
+          "title": "IT infrastructure for Araz Supermarket branches",
+          "text": "A project card and photo catalog were prepared for network cabinets, access points, CCTV, POS lines and testing stages.",
+          "primaryLabel": "View project",
+          "primaryHref": "project-detail.html?id=araz-supermarket",
+          "secondaryLabel": "All projects",
+          "secondaryHref": "projects.html",
+          "alt": "Retail IT infrastructure project preview"
+        }
+      }
+    ]
+  },
+  "projects": {
+    "az": {
+      "kicker": "Portfolio",
+      "title": "Görülən işlər və layihə siyahısı",
+      "lead": "Burada müştəri, obyekt tipi, görülən işlərin istiqaməti və foto kataloqla seçilmiş layihələri göstərə bilərsiniz."
+    },
+    "ru": {
+      "kicker": "Портфолио",
+      "title": "Выполненные работы и список проектов",
+      "lead": "Здесь можно показывать избранные проекты с клиентом, типом объекта, направлением работ и фотокаталогом."
+    },
+    "en": {
+      "kicker": "Portfolio",
+      "title": "Delivered work and project list",
+      "lead": "This page can show selected projects with customer, facility type, work direction and a photo catalog."
+    },
+    "items": [
+      {
+        "id": "araz-supermarket",
+        "enabled": true,
+        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "gallery": [
+          "assets/images/projects/araz-supermarket/pos-network-test.png",
+          "assets/images/projects/araz-supermarket/cctv-wifi-install.png",
+          "assets/images/projects/araz-supermarket/network-cabinet.png"
+        ],
+        "az": {
+          "tags": ["Retail", "IT infrastruktur", "Filial şəbəkəsi"],
+          "meta": ["Audit", "Montaj", "Test və təhvil"],
+          "title": "Araz Supermarket MMC filiallarında IT infrastrukturun qurulması",
+          "summary": "Filiallarda şəbəkə kabinetləri, strukturlaşdırılmış kabel sistemi, Wi-Fi, CCTV və POS xətlərinin qurulması üçün nümunə layihə kartı.",
+          "scopeTitle": "Görülən işlərin əhatəsi",
+          "scope": "Layihə filialların gündəlik satış prosesini dəstəkləyən şəbəkə infrastrukturunun qurulması üzərində fokuslanır: kabinet, kommutasiya, patch panel, kabel xətləri, access point, CCTV və POS zonalarının bağlantısı.",
+          "galleryTitle": "Foto kataloq"
+        },
+        "ru": {
+          "tags": ["Retail", "IT-инфраструктура", "Сеть филиалов"],
+          "meta": ["Аудит", "Монтаж", "Тест и сдача"],
+          "title": "Построение IT-инфраструктуры в филиалах Araz Supermarket MMC",
+          "summary": "Пример карточки проекта по построению сетевых шкафов, СКС, Wi-Fi, CCTV и POS-линий в филиалах.",
+          "scopeTitle": "Объем выполненных работ",
+          "scope": "Проект сфокусирован на сетевой инфраструктуре, поддерживающей ежедневные продажи филиалов: шкафы, коммутация, patch panel, кабельные линии, access point, CCTV и POS-зоны.",
+          "galleryTitle": "Фотокаталог"
+        },
+        "en": {
+          "tags": ["Retail", "IT infrastructure", "Branch network"],
+          "meta": ["Audit", "Installation", "Testing and handover"],
+          "title": "IT infrastructure deployment across Araz Supermarket MMC branches",
+          "summary": "A sample project card for network cabinets, structured cabling, Wi-Fi, CCTV and POS lines across branches.",
+          "scopeTitle": "Scope of delivered work",
+          "scope": "The project focuses on network infrastructure supporting daily branch sales operations: cabinets, switching, patch panels, cable lines, access points, CCTV and POS zones.",
+          "galleryTitle": "Photo catalog"
+        }
+      }
+    ]
+  },
+  "customSections": [
+    {
+      "id": "support-note",
+      "enabled": false,
+      "theme": "light",
+      "az": {
+        "kicker": "Yeni bölmə",
+        "title": "Admin paneldən əlavə olunan bölmə",
+        "lead": "Bu bölməni admin paneldən aktiv edib mətnini dəyişə bilərsiniz.",
+        "buttonLabel": "Əlaqə saxla",
+        "buttonHref": "index.html#contact"
+      },
+      "ru": {
+        "kicker": "Новый блок",
+        "title": "Блок, добавленный из админ-панели",
+        "lead": "Этот блок можно включить и изменить из админ-панели.",
+        "buttonLabel": "Связаться",
+        "buttonHref": "index.html#contact"
+      },
+      "en": {
+        "kicker": "New section",
+        "title": "Section added from the admin panel",
+        "lead": "This section can be enabled and edited from the admin panel.",
+        "buttonLabel": "Contact us",
+        "buttonHref": "index.html#contact"
+      }
+    }
+  ]
 }

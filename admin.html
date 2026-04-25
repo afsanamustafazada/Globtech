@@ -20,6 +20,9 @@
         </a>
         <nav class="admin-nav" aria-label="Admin sections">
           <a href="#hero">Hero</a>
+          <a href="#slider">Slider</a>
+          <a href="#projects">Layihələr</a>
+          <a href="#sections">Yeni bölmələr</a>
           <a href="#contact">Əlaqə</a>
           <a href="#chatbot">Chatbot</a>
           <a href="#security">Giriş</a>
@@ -77,6 +80,71 @@
                 <label><span>WhatsApp button</span><input data-field="hero.en.secondaryCta" /></label>
               </fieldset>
             </div>
+          </section>
+
+          <section class="admin-panel" id="slider">
+            <div>
+              <p class="section-kicker">Slider</p>
+              <h2>Əsas səhifə vitrini</h2>
+            </div>
+            <div class="admin-lang-grid">
+              <fieldset>
+                <legend>AZ</legend>
+                <label><span>Üst başlıq</span><input data-field="slider.az.kicker" /></label>
+                <label><span>Başlıq</span><input data-field="slider.az.title" /></label>
+                <label><span>Mətn</span><textarea data-field="slider.az.lead" rows="3"></textarea></label>
+              </fieldset>
+              <fieldset>
+                <legend>RU</legend>
+                <label><span>Верхний текст</span><input data-field="slider.ru.kicker" /></label>
+                <label><span>Заголовок</span><input data-field="slider.ru.title" /></label>
+                <label><span>Текст</span><textarea data-field="slider.ru.lead" rows="3"></textarea></label>
+              </fieldset>
+              <fieldset>
+                <legend>EN</legend>
+                <label><span>Eyebrow</span><input data-field="slider.en.kicker" /></label>
+                <label><span>Title</span><input data-field="slider.en.title" /></label>
+                <label><span>Text</span><textarea data-field="slider.en.lead" rows="3"></textarea></label>
+              </fieldset>
+            </div>
+            <div data-array-editor="slider.slides"></div>
+          </section>
+
+          <section class="admin-panel" id="projects">
+            <div>
+              <p class="section-kicker">Layihələr</p>
+              <h2>Layihə siyahısı və foto kataloq</h2>
+            </div>
+            <div class="admin-lang-grid">
+              <fieldset>
+                <legend>AZ</legend>
+                <label><span>Üst başlıq</span><input data-field="projects.az.kicker" /></label>
+                <label><span>Başlıq</span><input data-field="projects.az.title" /></label>
+                <label><span>Mətn</span><textarea data-field="projects.az.lead" rows="3"></textarea></label>
+              </fieldset>
+              <fieldset>
+                <legend>RU</legend>
+                <label><span>Верхний текст</span><input data-field="projects.ru.kicker" /></label>
+                <label><span>Заголовок</span><input data-field="projects.ru.title" /></label>
+                <label><span>Текст</span><textarea data-field="projects.ru.lead" rows="3"></textarea></label>
+              </fieldset>
+              <fieldset>
+                <legend>EN</legend>
+                <label><span>Eyebrow</span><input data-field="projects.en.kicker" /></label>
+                <label><span>Title</span><input data-field="projects.en.title" /></label>
+                <label><span>Text</span><textarea data-field="projects.en.lead" rows="3"></textarea></label>
+              </fieldset>
+            </div>
+            <div data-array-editor="projects.items"></div>
+          </section>
+
+          <section class="admin-panel" id="sections">
+            <div>
+              <p class="section-kicker">Yeni bölmələr</p>
+              <h2>Əsas səhifəyə əlavə bloklar</h2>
+            </div>
+            <p class="admin-note">Buradan əsas səhifədə partnyorlar və əlaqə arasında görünəcək əlavə bölmələr yarada, aktiv/passiv edə və silə bilərsən.</p>
+            <div data-array-editor="customSections"></div>
           </section>
 
           <section class="admin-panel" id="contact">

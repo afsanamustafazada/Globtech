@@ -113,16 +113,16 @@
       <section class="section product-slider-section" id="demo-slider" aria-labelledby="slider-title">
         <div class="section-inner">
           <div class="section-heading slider-heading">
-            <p class="section-kicker" data-i18n="slider.kicker">Demo və layihə vitrini</p>
-            <h2 id="slider-title" data-i18n="slider.title">Əsas həlləri və görülən işləri bir baxışda göstərin</h2>
-            <p data-i18n="slider.lead">
+            <p class="section-kicker" data-i18n="slider.kicker" data-setting="slider.kicker">Demo və layihə vitrini</p>
+            <h2 id="slider-title" data-i18n="slider.title" data-setting="slider.title">Əsas həlləri və görülən işləri bir baxışda göstərin</h2>
+            <p data-i18n="slider.lead" data-setting="slider.lead">
               Slider hissəsi ERP demo təqdimatı və seçilmiş layihələr üçün hazırlanıb. Şəkilə və
               düymələrə klik etdikdə ayrıca məlumat səhifələri açılır.
             </p>
           </div>
 
           <div class="slider-shell" data-slider>
-            <div class="slider-track">
+            <div class="slider-track" data-managed-slider>
               <article class="slider-slide is-active">
                 <div class="slider-copy">
                   <span class="slide-badge" data-i18n="slider.infra.badge">IT və ELV</span>
@@ -427,6 +427,8 @@
           </div>
         </div>
       </section>
+
+      <div data-custom-sections></div>
 
       <section class="section contact-section" id="contact">
         <div class="section-inner contact-layout">

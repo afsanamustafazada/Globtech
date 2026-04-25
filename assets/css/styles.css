@@ -1099,6 +1099,30 @@ textarea {
   background: #fff;
 }
 
+.custom-section {
+  background: #fff;
+}
+
+.custom-section-dark {
+  background: var(--coal);
+  color: #fff;
+}
+
+.custom-section-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.custom-section .section-heading {
+  margin-bottom: 0;
+}
+
+.custom-section-dark .section-heading p:last-child {
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .partners-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2049,6 +2073,11 @@ textarea {
 
   .section-heading.compact {
     margin-bottom: 24px;
+  }
+
+  .custom-section-inner {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .process-list {

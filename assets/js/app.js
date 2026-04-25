@@ -342,6 +342,8 @@ const extraTranslations = {
     "page.projects.title": "Layihələr | GlobTech Consulting & Engineering",
     "page.projects.description":
       "GlobTech layihələri: IT infrastruktur, ELV sistemləri, təhlükəsizlik və servis işləri.",
+    "page.projectDetail.title": "Layihə detalları | GlobTech Consulting & Engineering",
+    "page.projectDetail.description": "GlobTech layihə məlumatı, görülən işlər və foto kataloq.",
     "page.araz.title": "Araz Supermarket layihəsi | GlobTech",
     "page.araz.description":
       "Araz Supermarket MMC filiallarında IT infrastrukturun qurulması üzrə layihə məlumatı və foto kataloq.",
@@ -470,6 +472,8 @@ const extraTranslations = {
     "page.projects.title": "Проекты | GlobTech Consulting & Engineering",
     "page.projects.description":
       "Проекты GlobTech: IT-инфраструктура, ELV-системы, безопасность и сервис.",
+    "page.projectDetail.title": "Детали проекта | GlobTech Consulting & Engineering",
+    "page.projectDetail.description": "Информация о проекте GlobTech, выполненные работы и фотокаталог.",
     "page.araz.title": "Проект Araz Supermarket | GlobTech",
     "page.araz.description":
       "Информация и фотокаталог проекта по построению IT-инфраструктуры в филиалах Araz Supermarket MMC.",
@@ -598,6 +602,8 @@ const extraTranslations = {
     "page.projects.title": "Projects | GlobTech Consulting & Engineering",
     "page.projects.description":
       "GlobTech projects: IT infrastructure, ELV systems, security and service work.",
+    "page.projectDetail.title": "Project details | GlobTech Consulting & Engineering",
+    "page.projectDetail.description": "GlobTech project information, delivered work and photo catalog.",
     "page.araz.title": "Araz Supermarket project | GlobTech",
     "page.araz.description":
       "Project information and photo catalog for IT infrastructure deployment across Araz Supermarket MMC branches.",
@@ -813,6 +819,218 @@ function localizedSetting(value, language) {
   return value[language] || value[defaultLanguage] || Object.values(value)[0] || "";
 }
 
+function localizedObject(value, language) {
+  return value?.[language] || value?.[defaultLanguage] || {};
+}
+
+function escapeHtml(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function localizedHref(href, language) {
+  return withLanguage(href || "#", language);
+}
+
+function renderTags(items, className = "") {
+  return (Array.isArray(items) ? items : [])
+    .filter(Boolean)
+    .map((item) => `<span class="${className}">${escapeHtml(item)}</span>`)
+    .join("");
+}
+
+function renderManagedSlider(language) {
+  const track = document.querySelector("[data-managed-slider]");
+
+  if (!track || !siteSettings?.slider?.slides) {
+    return;
+  }
+
+  const slides = siteSettings.slider.slides.filter((slide) => slide.enabled !== false);
+
+  if (!slides.length) {
+    track.innerHTML = "";
+    return;
+  }
+
+  track.innerHTML = slides
+    .map((slide, index) => {
+      const copy = localizedObject(slide, language);
+      const imageHref = localizedHref(slide.href || copy.primaryHref, language);
+      const primaryHref = localizedHref(copy.primaryHref || slide.href, language);
+      const secondaryHref = localizedHref(copy.secondaryHref || "projects.html", language);
+
+      return `
+        <article class="slider-slide${index === 0 ? " is-active" : ""}">
+          <div class="slider-copy">
+            <span class="slide-badge">${escapeHtml(copy.badge)}</span>
+            <h3>${escapeHtml(copy.title)}</h3>
+            <p>${escapeHtml(copy.text)}</p>
+            <div class="slide-actions">
+              <a class="button button-primary" href="${escapeHtml(primaryHref)}">${escapeHtml(copy.primaryLabel || "More")}</a>
+              <a class="button button-light" href="${escapeHtml(secondaryHref)}">${escapeHtml(copy.secondaryLabel || "Projects")}</a>
+            </div>
+          </div>
+          <a class="slider-image-link" href="${escapeHtml(imageHref)}" aria-label="${escapeHtml(copy.title)}">
+            <img src="${escapeHtml(slide.image)}" alt="${escapeHtml(copy.alt || copy.title)}" loading="${index === 0 ? "eager" : "lazy"}" />
+          </a>
+        </article>
+      `;
+    })
+    .join("");
+}
+
+function renderManagedProjects(language) {
+  const grid = document.querySelector("[data-managed-projects]");
+
+  if (!grid || !siteSettings?.projects?.items) {
+    return;
+  }
+
+  const projects = siteSettings.projects.items.filter((project) => project.enabled !== false);
+
+  if (!projects.length) {
+    grid.innerHTML = "";
+    return;
+  }
+
+  grid.innerHTML = projects
+    .map((project) => {
+      const copy = localizedObject(project, language);
+      const href = localizedHref(`project-detail.html?id=${encodeURIComponent(project.id || "")}`, language);
+
+      return `
+        <a class="project-card" href="${escapeHtml(href)}">
+          <img src="${escapeHtml(project.image)}" alt="${escapeHtml(copy.title)}" loading="lazy" />
+          <div class="project-card-body">
+            <div>
+              <div class="tag-row">${renderTags(copy.tags)}</div>
+              <h2>${escapeHtml(copy.title)}</h2>
+              <p>${escapeHtml(copy.summary)}</p>
+            </div>
+            <div class="project-meta">${renderTags(copy.meta)}</div>
+          </div>
+        </a>
+      `;
+    })
+    .join("");
+}
+
+function renderCustomSections(language) {
+  const host = document.querySelector("[data-custom-sections]");
+
+  if (!host || !siteSettings?.customSections) {
+    return;
+  }
+
+  const sections = siteSettings.customSections.filter((section) => section.enabled !== false);
+
+  host.innerHTML = sections
+    .map((section) => {
+      const copy = localizedObject(section, language);
+      const themeClass = section.theme === "dark" ? " custom-section-dark" : "";
+      const buttonHref = localizedHref(copy.buttonHref || "index.html#contact", language);
+      const button = copy.buttonLabel
+        ? `<a class="button ${section.theme === "dark" ? "button-secondary" : "button-primary"}" href="${escapeHtml(buttonHref)}">${escapeHtml(copy.buttonLabel)}</a>`
+        : "";
+
+      return `
+        <section class="section custom-section${themeClass}" id="${escapeHtml(section.id || "")}">
+          <div class="section-inner custom-section-inner">
+            <div class="section-heading compact">
+              <p class="section-kicker">${escapeHtml(copy.kicker)}</p>
+              <h2>${escapeHtml(copy.title)}</h2>
+              <p>${escapeHtml(copy.lead)}</p>
+            </div>
+            ${button}
+          </div>
+        </section>
+      `;
+    })
+    .join("");
+}
+
+function renderProjectDetail(language) {
+  const root = document.querySelector("[data-project-detail]");
+
+  if (!root || !siteSettings?.projects?.items) {
+    return;
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  const project = siteSettings.projects.items.find((item) => item.id === id) || siteSettings.projects.items[0];
+  const copy = localizedObject(project, language);
+
+  if (!project || !copy.title) {
+    root.innerHTML = `
+      <section class="page-hero">
+        <div class="page-hero-inner">
+          <p class="section-kicker">Portfolio</p>
+          <h1>Project not found</h1>
+          <p>This project is not available yet.</p>
+        </div>
+      </section>
+    `;
+    return;
+  }
+
+  const title = root.querySelector("[data-project-title]");
+  const summary = root.querySelector("[data-project-summary]");
+  const kicker = root.querySelector("[data-project-kicker]");
+  const scopeTitle = root.querySelector("[data-project-scope-title]");
+  const scope = root.querySelector("[data-project-scope]");
+  const facts = root.querySelector("[data-project-facts]");
+  const galleryTitle = root.querySelector("[data-project-gallery-title]");
+  const gallery = root.querySelector("[data-project-gallery]");
+
+  if (title) title.textContent = copy.title;
+  if (summary) summary.textContent = copy.summary;
+  document.title = `${copy.title} | GlobTech`;
+  if (kicker) kicker.textContent = siteSettings.projects?.[language]?.kicker || siteSettings.projects?.[defaultLanguage]?.kicker || "Portfolio";
+  if (scopeTitle) scopeTitle.textContent = copy.scopeTitle || "";
+  if (scope) scope.textContent = copy.scope || "";
+  if (galleryTitle) galleryTitle.textContent = copy.galleryTitle || "";
+
+  if (facts) {
+    const meta = Array.isArray(copy.meta) ? copy.meta : [];
+    const tags = Array.isArray(copy.tags) ? copy.tags : [];
+    facts.innerHTML = `
+      <div>
+        <dt>Client</dt>
+        <dd>${escapeHtml(copy.title.split(" MMC")[0] || copy.title)}</dd>
+      </div>
+      <div>
+        <dt>Direction</dt>
+        <dd>${escapeHtml(tags.join(", "))}</dd>
+      </div>
+      <div>
+        <dt>Work stages</dt>
+        <dd>${escapeHtml(meta.join(", "))}</dd>
+      </div>
+    `;
+  }
+
+  if (gallery) {
+    const images = Array.isArray(project.gallery) && project.gallery.length ? project.gallery : [project.image];
+    gallery.innerHTML = images
+      .filter(Boolean)
+      .map(
+        (image, index) => `
+          <figure class="gallery-item">
+            <img src="${escapeHtml(image)}" alt="${escapeHtml(`${copy.title} ${index + 1}`)}" loading="lazy" />
+            <figcaption>${escapeHtml(copy.galleryTitle || copy.title)} ${index + 1}</figcaption>
+          </figure>
+        `
+      )
+      .join("");
+  }
+}
+
 function cleanPhone(value) {
   return String(value || "").replace(/[^\d]/g, "");
 }
@@ -833,10 +1051,12 @@ function applySiteSettings(language) {
   const hero = siteSettings.hero?.[language] || siteSettings.hero?.[defaultLanguage] || {};
   const contact = siteSettings.contact || {};
   const chatbot = siteSettings.chatbot?.[language] || siteSettings.chatbot?.[defaultLanguage] || {};
+  const slider = siteSettings.slider?.[language] || siteSettings.slider?.[defaultLanguage] || {};
+  const projects = siteSettings.projects?.[language] || siteSettings.projects?.[defaultLanguage] || {};
 
   document.querySelectorAll("[data-setting]").forEach((element) => {
     const [group, key] = element.dataset.setting.split(".");
-    const source = { hero, contact, chatbot }[group];
+    const source = { hero, contact, chatbot, slider, projects }[group];
     const value = localizedSetting(source?.[key], language);
 
     if (value) {
@@ -846,7 +1066,7 @@ function applySiteSettings(language) {
 
   document.querySelectorAll("[data-setting-placeholder]").forEach((element) => {
     const [group, key] = element.dataset.settingPlaceholder.split(".");
-    const source = { hero, contact, chatbot }[group];
+    const source = { hero, contact, chatbot, slider, projects }[group];
     const value = localizedSetting(source?.[key], language);
 
     if (value) {
@@ -893,6 +1113,11 @@ function applySiteSettings(language) {
   document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
     link.setAttribute("href", buildWhatsAppUrl(link.dataset.whatsappLink, language));
   });
+
+  renderManagedSlider(language);
+  renderManagedProjects(language);
+  renderCustomSections(language);
+  renderProjectDetail(language);
 }
 
 function translate(language) {
@@ -932,6 +1157,7 @@ function translate(language) {
   updateUrlLanguage(language);
   syncLocalizedLinks(language);
   applySiteSettings(language);
+  initSliders();
 
   if (window.lucide) {
     window.lucide.createIcons();
@@ -963,15 +1189,31 @@ document.addEventListener("keydown", (event) => {
 
 function initSliders() {
   document.querySelectorAll("[data-slider]").forEach((slider) => {
+    if (slider._globtechAutoplayTimer) {
+      window.clearInterval(slider._globtechAutoplayTimer);
+    }
+
     const slides = Array.from(slider.querySelectorAll(".slider-slide"));
     const dotsContainer = slider.querySelector(".slider-dots");
-    const previousButton = slider.querySelector("[data-slide-prev]");
-    const nextButton = slider.querySelector("[data-slide-next]");
+    let previousButton = slider.querySelector("[data-slide-prev]");
+    let nextButton = slider.querySelector("[data-slide-next]");
     let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
     let autoplayTimer;
 
     if (!slides.length) {
       return;
+    }
+
+    if (previousButton) {
+      const clonedButton = previousButton.cloneNode(true);
+      previousButton.replaceWith(clonedButton);
+      previousButton = clonedButton;
+    }
+
+    if (nextButton) {
+      const clonedButton = nextButton.cloneNode(true);
+      nextButton.replaceWith(clonedButton);
+      nextButton = clonedButton;
     }
 
     function setActive(index) {
@@ -998,6 +1240,7 @@ function initSliders() {
       autoplayTimer = window.setInterval(() => {
         setActive(activeIndex + 1);
       }, Number(slider.dataset.interval || 6000));
+      slider._globtechAutoplayTimer = autoplayTimer;
     }
 
     if (dotsContainer) {
@@ -1038,6 +1281,7 @@ function initMotion() {
       ".process-list li",
       ".standards-panel span",
       ".partner-card",
+      ".custom-section .section-heading",
       ".ai-card",
       ".ai-visual-card",
       ".contact-form",
@@ -1259,9 +1503,8 @@ if (yearElement) {
 }
 
 loadSiteSettings().finally(() => {
-  initSliders();
+  translate(getInitialLanguage());
   initMotion();
   initHeroCounters();
   initAiAssistant();
-  translate(getInitialLanguage());
 });
