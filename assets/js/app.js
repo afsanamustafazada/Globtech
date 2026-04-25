@@ -1012,7 +1012,7 @@ function renderManagedPartners(language) {
 
       return `
         <a class="partner-card partner-card-detail" href="${escapeHtml(href)}">
-          <span class="partner-logo" aria-hidden="true">${escapeHtml(partner.logoText || partner.name?.slice(0, 2) || "GT")}</span>
+          ${renderPartnerLogo(partner, "partner-logo")}
           <strong>${escapeHtml(partner.name)}</strong>
           <span>${escapeHtml(copy.short)}</span>
         </a>
@@ -1164,7 +1164,9 @@ function renderPartnerDetail(language) {
   const galleryTitle = root.querySelector("[data-partner-gallery-title]");
   const gallery = root.querySelector("[data-partner-gallery]");
 
-  if (logo) logo.textContent = partner.logoText || partner.name?.slice(0, 2) || "GT";
+  if (logo) {
+    logo.outerHTML = renderPartnerLogo(partner, "partner-logo partner-logo-large", true);
+  }
   root.querySelectorAll("[data-partner-title]").forEach((element) => {
     element.textContent = copy.title;
   });
@@ -1190,6 +1192,16 @@ function renderPartnerDetail(language) {
       )
       .join("");
   }
+}
+
+function renderPartnerLogo(partner, className, includeDataAttribute = false) {
+  const dataAttribute = includeDataAttribute ? ' data-partner-logo' : "";
+
+  if (partner.logo) {
+    return `<span class="${className}"${dataAttribute}><img src="${escapeHtml(partner.logo)}" alt="${escapeHtml(partner.name)} logo" loading="lazy" /></span>`;
+  }
+
+  return `<span class="${className}"${dataAttribute} aria-hidden="true">${escapeHtml(partner.logoText || partner.name?.slice(0, 2) || "GT")}</span>`;
 }
 
 function cleanPhone(value) {

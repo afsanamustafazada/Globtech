@@ -258,11 +258,13 @@
       {
         "id": "araz-supermarket",
         "enabled": true,
-        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "image": "assets/images/projects/client-work/project-01.jpg",
         "gallery": [
-          "assets/images/projects/araz-supermarket/pos-network-test.png",
-          "assets/images/projects/araz-supermarket/cctv-wifi-install.png",
-          "assets/images/projects/araz-supermarket/network-cabinet.png"
+          "assets/images/projects/client-work/project-01.jpg",
+          "assets/images/projects/client-work/project-02.jpg",
+          "assets/images/projects/client-work/project-03.jpeg",
+          "assets/images/projects/client-work/project-04.jpeg",
+          "assets/images/projects/client-work/project-05.jpg"
         ],
         "az": {
           "tags": [
@@ -320,11 +322,13 @@
         "id": "azdizayn-mmc",
         "client": "Azdizayn Məhdud Məsuliyyətli Cəmiyyət",
         "enabled": true,
-        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "image": "assets/images/projects/client-work/project-02.jpg",
         "gallery": [
-          "assets/images/projects/araz-supermarket/network-cabinet.png",
-          "assets/images/projects/araz-supermarket/cctv-wifi.png",
-          "assets/images/projects/araz-supermarket/pos-testing.png"
+          "assets/images/projects/client-work/project-01.jpg",
+          "assets/images/projects/client-work/project-02.jpg",
+          "assets/images/projects/client-work/project-03.jpeg",
+          "assets/images/projects/client-work/project-04.jpeg",
+          "assets/images/projects/client-work/project-05.jpg"
         ],
         "az": {
           "tags": [
@@ -382,11 +386,13 @@
         "id": "fc-group-mmc",
         "client": "FC Group MMC",
         "enabled": true,
-        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "image": "assets/images/projects/client-work/project-03.jpeg",
         "gallery": [
-          "assets/images/projects/araz-supermarket/network-cabinet.png",
-          "assets/images/projects/araz-supermarket/cctv-wifi.png",
-          "assets/images/projects/araz-supermarket/pos-testing.png"
+          "assets/images/projects/client-work/project-01.jpg",
+          "assets/images/projects/client-work/project-02.jpg",
+          "assets/images/projects/client-work/project-03.jpeg",
+          "assets/images/projects/client-work/project-04.jpeg",
+          "assets/images/projects/client-work/project-05.jpg"
         ],
         "az": {
           "tags": [
@@ -444,11 +450,13 @@
         "id": "rst-global-business-center",
         "client": "RST Global Business Center",
         "enabled": true,
-        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "image": "assets/images/projects/client-work/project-04.jpeg",
         "gallery": [
-          "assets/images/projects/araz-supermarket/network-cabinet.png",
-          "assets/images/projects/araz-supermarket/cctv-wifi.png",
-          "assets/images/projects/araz-supermarket/pos-testing.png"
+          "assets/images/projects/client-work/project-01.jpg",
+          "assets/images/projects/client-work/project-02.jpg",
+          "assets/images/projects/client-work/project-03.jpeg",
+          "assets/images/projects/client-work/project-04.jpeg",
+          "assets/images/projects/client-work/project-05.jpg"
         ],
         "az": {
           "tags": [
@@ -506,11 +514,13 @@
         "id": "dominos-azerbaijan",
         "client": "Dominos Azerbaijan",
         "enabled": true,
-        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "image": "assets/images/projects/client-work/project-05.jpg",
         "gallery": [
-          "assets/images/projects/araz-supermarket/network-cabinet.png",
-          "assets/images/projects/araz-supermarket/cctv-wifi.png",
-          "assets/images/projects/araz-supermarket/pos-testing.png"
+          "assets/images/projects/client-work/project-01.jpg",
+          "assets/images/projects/client-work/project-02.jpg",
+          "assets/images/projects/client-work/project-03.jpeg",
+          "assets/images/projects/client-work/project-04.jpeg",
+          "assets/images/projects/client-work/project-05.jpg"
         ],
         "az": {
           "tags": [
@@ -618,9 +628,14 @@
         "logoText": "DH",
         "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
         "gallery": [
-          "assets/images/projects/araz-supermarket/network-cabinet.png",
-          "assets/images/projects/araz-supermarket/cctv-wifi.png",
-          "assets/images/projects/araz-supermarket/pos-testing.png"
+          "assets/images/partners/catalog/partner-01.png",
+          "assets/images/partners/catalog/partner-02.png",
+          "assets/images/partners/catalog/partner-03.png",
+          "assets/images/partners/catalog/partner-04.png",
+          "assets/images/partners/catalog/partner-05.png",
+          "assets/images/partners/catalog/partner-07.png",
+          "assets/images/partners/catalog/partner-08.png",
+          "assets/images/partners/catalog/partner-09.png"
         ],
         "az": {
           "short": "Video müşahidə və təhlükəsizlik texnologiyaları",
@@ -663,9 +678,14 @@
         "logoText": "ZK",
         "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
         "gallery": [
-          "assets/images/projects/araz-supermarket/network-cabinet.png",
-          "assets/images/projects/araz-supermarket/cctv-wifi.png",
-          "assets/images/projects/araz-supermarket/pos-testing.png"
+          "assets/images/partners/catalog/partner-01.png",
+          "assets/images/partners/catalog/partner-02.png",
+          "assets/images/partners/catalog/partner-03.png",
+          "assets/images/partners/catalog/partner-04.png",
+          "assets/images/partners/catalog/partner-05.png",
+          "assets/images/partners/catalog/partner-07.png",
+          "assets/images/partners/catalog/partner-08.png",
+          "assets/images/partners/catalog/partner-09.png"
         ],
         "az": {
           "short": "Access control, biometrik sistemlər və turniket həlləri",
@@ -708,9 +728,14 @@
         "logoText": "RB",
         "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
         "gallery": [
-          "assets/images/projects/araz-supermarket/network-cabinet.png",
-          "assets/images/projects/araz-supermarket/cctv-wifi.png",
-          "assets/images/projects/araz-supermarket/pos-testing.png"
+          "assets/images/partners/catalog/partner-01.png",
+          "assets/images/partners/catalog/partner-02.png",
+          "assets/images/partners/catalog/partner-03.png",
+          "assets/images/partners/catalog/partner-04.png",
+          "assets/images/partners/catalog/partner-05.png",
+          "assets/images/partners/catalog/partner-07.png",
+          "assets/images/partners/catalog/partner-08.png",
+          "assets/images/partners/catalog/partner-09.png"
         ],
         "az": {
           "short": "Yanğın siqnalizasiya və bildiriş sistemləri",
@@ -753,9 +778,14 @@
         "logoText": "HK",
         "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
         "gallery": [
-          "assets/images/projects/araz-supermarket/network-cabinet.png",
-          "assets/images/projects/araz-supermarket/cctv-wifi.png",
-          "assets/images/projects/araz-supermarket/pos-testing.png"
+          "assets/images/partners/catalog/partner-01.png",
+          "assets/images/partners/catalog/partner-02.png",
+          "assets/images/partners/catalog/partner-03.png",
+          "assets/images/partners/catalog/partner-04.png",
+          "assets/images/partners/catalog/partner-05.png",
+          "assets/images/partners/catalog/partner-07.png",
+          "assets/images/partners/catalog/partner-08.png",
+          "assets/images/partners/catalog/partner-09.png"
         ],
         "az": {
           "short": "CCTV, video analitika və monitorinq həlləri",
@@ -796,11 +826,16 @@
         "enabled": true,
         "name": "Grandstream",
         "logoText": "GS",
-        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "image": "assets/images/partners/grandstream-logo.png",
         "gallery": [
-          "assets/images/projects/araz-supermarket/network-cabinet.png",
-          "assets/images/projects/araz-supermarket/cctv-wifi.png",
-          "assets/images/projects/araz-supermarket/pos-testing.png"
+          "assets/images/partners/catalog/partner-01.png",
+          "assets/images/partners/catalog/partner-02.png",
+          "assets/images/partners/catalog/partner-03.png",
+          "assets/images/partners/catalog/partner-04.png",
+          "assets/images/partners/catalog/partner-05.png",
+          "assets/images/partners/catalog/partner-07.png",
+          "assets/images/partners/catalog/partner-08.png",
+          "assets/images/partners/catalog/partner-09.png"
         ],
         "az": {
           "short": "IP telefoniya, PBX və korporativ rabitə həlləri",
@@ -834,7 +869,8 @@
             "VoIP"
           ],
           "galleryTitle": "Grandstream catalog"
-        }
+        },
+        "logo": "assets/images/partners/grandstream-logo.png"
       },
       {
         "id": "muk-training-center",
@@ -843,9 +879,14 @@
         "logoText": "MUK",
         "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
         "gallery": [
-          "assets/images/projects/araz-supermarket/network-cabinet.png",
-          "assets/images/projects/araz-supermarket/cctv-wifi.png",
-          "assets/images/projects/araz-supermarket/pos-testing.png"
+          "assets/images/partners/catalog/partner-01.png",
+          "assets/images/partners/catalog/partner-02.png",
+          "assets/images/partners/catalog/partner-03.png",
+          "assets/images/partners/catalog/partner-04.png",
+          "assets/images/partners/catalog/partner-05.png",
+          "assets/images/partners/catalog/partner-07.png",
+          "assets/images/partners/catalog/partner-08.png",
+          "assets/images/partners/catalog/partner-09.png"
         ],
         "az": {
           "short": "Təlim, sertifikasiya və IT bilik mərkəzi",
