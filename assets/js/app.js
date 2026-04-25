@@ -343,7 +343,9 @@ const extraTranslations = {
     "page.projects.description":
       "GlobTech layihələri: IT infrastruktur, ELV sistemləri, təhlükəsizlik və servis işləri.",
     "page.projectDetail.title": "Layihə detalları | GlobTech Consulting & Engineering",
-    "page.projectDetail.description": "GlobTech layihə məlumatı, görülən işlər və foto kataloq.",
+  "page.projectDetail.description": "GlobTech layihə məlumatı, görülən işlər və foto kataloq.",
+  "page.partnerDetail.title": "Partnyor profili | GlobTech Consulting & Engineering",
+  "page.partnerDetail.description": "GlobTech partnyor profili, istiqamətlər və kataloq.",
     "page.araz.title": "Araz Supermarket layihəsi | GlobTech",
     "page.araz.description":
       "Araz Supermarket MMC filiallarında IT infrastrukturun qurulması üzrə layihə məlumatı və foto kataloq.",
@@ -473,7 +475,9 @@ const extraTranslations = {
     "page.projects.description":
       "Проекты GlobTech: IT-инфраструктура, ELV-системы, безопасность и сервис.",
     "page.projectDetail.title": "Детали проекта | GlobTech Consulting & Engineering",
-    "page.projectDetail.description": "Информация о проекте GlobTech, выполненные работы и фотокаталог.",
+  "page.projectDetail.description": "Информация о проекте GlobTech, выполненные работы и фотокаталог.",
+  "page.partnerDetail.title": "Профиль партнера | GlobTech Consulting & Engineering",
+  "page.partnerDetail.description": "Профиль партнера GlobTech, направления и каталог.",
     "page.araz.title": "Проект Araz Supermarket | GlobTech",
     "page.araz.description":
       "Информация и фотокаталог проекта по построению IT-инфраструктуры в филиалах Araz Supermarket MMC.",
@@ -603,7 +607,9 @@ const extraTranslations = {
     "page.projects.description":
       "GlobTech projects: IT infrastructure, ELV systems, security and service work.",
     "page.projectDetail.title": "Project details | GlobTech Consulting & Engineering",
-    "page.projectDetail.description": "GlobTech project information, delivered work and photo catalog.",
+  "page.projectDetail.description": "GlobTech project information, delivered work and photo catalog.",
+  "page.partnerDetail.title": "Partner profile | GlobTech Consulting & Engineering",
+  "page.partnerDetail.description": "GlobTech partner profile, focus areas and catalog.",
     "page.araz.title": "Araz Supermarket project | GlobTech",
     "page.araz.description":
       "Project information and photo catalog for IT infrastructure deployment across Araz Supermarket MMC branches.",
@@ -729,6 +735,60 @@ const extraTranslations = {
 
 Object.entries(extraTranslations).forEach(([language, values]) => {
   translations[language] = { ...translations[language], ...values };
+});
+
+Object.assign(translations.az, {
+  "service.hosting.title": "Hosting və mail xidmətləri",
+  "service.hosting.text": "Korporativ mail, hosting, domain, DNS və ehtiyat nüsxələmə proseslərinin sabit idarə olunması.",
+  "service.hosting.item1": "Hosting və server mühiti",
+  "service.hosting.item2": "Korporativ mail və DNS",
+  "service.hosting.item3": "Backup və monitorinq",
+  "service.web.title": "Veb sayt hazırlanması",
+  "service.web.text": "Korporativ sayt, landing page, xidmət kataloqu və müraciət formalarını biznes məqsədinə uyğun hazırlayırıq.",
+  "service.web.item1": "Korporativ sayt və portfolio",
+  "service.web.item2": "Mobil uyğun interfeys",
+  "service.web.item3": "Forma, analitika və SEO baza",
+  "service.cyber.title": "Təhlükəsizlik və qorunma",
+  "service.cyber.text": "Şəbəkə, server, mail və veb mühitləri üçün risklərin azaldılması və praktiki qorunma tədbirləri.",
+  "service.cyber.item1": "Firewall və giriş qaydaları",
+  "service.cyber.item2": "Mail və endpoint qorunması",
+  "service.cyber.item3": "Audit və təhlükəsizlik planı",
+});
+
+Object.assign(translations.ru, {
+  "service.hosting.title": "Hosting и mail-сервисы",
+  "service.hosting.text": "Стабильное управление corporate mail, hosting, domain, DNS и резервным копированием.",
+  "service.hosting.item1": "Hosting и серверная среда",
+  "service.hosting.item2": "Corporate mail и DNS",
+  "service.hosting.item3": "Backup и мониторинг",
+  "service.web.title": "Разработка веб-сайтов",
+  "service.web.text": "Корпоративные сайты, landing page, каталоги услуг и формы заявок под бизнес-задачи.",
+  "service.web.item1": "Корпоративный сайт и portfolio",
+  "service.web.item2": "Мобильный интерфейс",
+  "service.web.item3": "Формы, аналитика и SEO-база",
+  "service.cyber.title": "Безопасность и защита",
+  "service.cyber.text": "Практическая защита сетей, серверов, mail и web-сред с уменьшением технических рисков.",
+  "service.cyber.item1": "Firewall и правила доступа",
+  "service.cyber.item2": "Mail и endpoint-защита",
+  "service.cyber.item3": "Аудит и план безопасности",
+});
+
+Object.assign(translations.en, {
+  "service.hosting.title": "Hosting and mail services",
+  "service.hosting.text": "Stable management of corporate mail, hosting, domain, DNS and backup processes.",
+  "service.hosting.item1": "Hosting and server environment",
+  "service.hosting.item2": "Corporate mail and DNS",
+  "service.hosting.item3": "Backup and monitoring",
+  "service.web.title": "Website development",
+  "service.web.text": "Corporate websites, landing pages, service catalogs and inquiry forms aligned with business goals.",
+  "service.web.item1": "Corporate site and portfolio",
+  "service.web.item2": "Mobile-ready interface",
+  "service.web.item3": "Forms, analytics and SEO base",
+  "service.cyber.title": "Security and protection",
+  "service.cyber.text": "Practical protection and risk reduction for network, server, mail and web environments.",
+  "service.cyber.item1": "Firewall and access rules",
+  "service.cyber.item2": "Mail and endpoint protection",
+  "service.cyber.item3": "Audit and security plan",
 });
 
 const supportedLanguages = Object.keys(translations);
@@ -931,6 +991,36 @@ function renderManagedProjects(language) {
     .join("");
 }
 
+function renderManagedPartners(language) {
+  const grid = document.querySelector("[data-managed-partners]");
+
+  if (!grid || !siteSettings?.partners?.items) {
+    return;
+  }
+
+  const partners = siteSettings.partners.items.filter((partner) => partner.enabled !== false);
+
+  if (!partners.length) {
+    grid.innerHTML = "";
+    return;
+  }
+
+  grid.innerHTML = partners
+    .map((partner) => {
+      const copy = localizedObject(partner, language);
+      const href = localizedHref(`partner-detail.html?id=${encodeURIComponent(partner.id || "")}`, language);
+
+      return `
+        <a class="partner-card partner-card-detail" href="${escapeHtml(href)}">
+          <span class="partner-logo" aria-hidden="true">${escapeHtml(partner.logoText || partner.name?.slice(0, 2) || "GT")}</span>
+          <strong>${escapeHtml(partner.name)}</strong>
+          <span>${escapeHtml(copy.short)}</span>
+        </a>
+      `;
+    })
+    .join("");
+}
+
 function renderCustomSections(language) {
   const host = document.querySelector("[data-custom-sections]");
 
@@ -1013,7 +1103,7 @@ function renderProjectDetail(language) {
     facts.innerHTML = `
       <div>
         <dt>Client</dt>
-        <dd>${escapeHtml(copy.title.split(" MMC")[0] || copy.title)}</dd>
+        <dd>${escapeHtml(project.client || copy.title.split(" MMC")[0] || copy.title)}</dd>
       </div>
       <div>
         <dt>Direction</dt>
@@ -1035,6 +1125,66 @@ function renderProjectDetail(language) {
           <figure class="gallery-item">
             <img src="${escapeHtml(image)}" alt="${escapeHtml(`${copy.title} ${index + 1}`)}" loading="lazy" />
             <figcaption>${escapeHtml(copy.galleryTitle || copy.title)} ${index + 1}</figcaption>
+          </figure>
+        `
+      )
+      .join("");
+  }
+}
+
+function renderPartnerDetail(language) {
+  const root = document.querySelector("[data-partner-detail]");
+
+  if (!root || !siteSettings?.partners?.items) {
+    return;
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  const partner = siteSettings.partners.items.find((item) => item.id === id) || siteSettings.partners.items[0];
+  const copy = localizedObject(partner, language);
+
+  if (!partner || !copy.title) {
+    root.innerHTML = `
+      <section class="page-hero">
+        <div class="page-hero-inner">
+          <p class="section-kicker">Partners</p>
+          <h1>Partner not found</h1>
+          <p>This partner profile is not available yet.</p>
+        </div>
+      </section>
+    `;
+    return;
+  }
+
+  const logo = root.querySelector("[data-partner-logo]");
+  const title = root.querySelector("[data-partner-title]");
+  const summary = root.querySelector("[data-partner-summary]");
+  const areas = root.querySelector("[data-partner-areas]");
+  const galleryTitle = root.querySelector("[data-partner-gallery-title]");
+  const gallery = root.querySelector("[data-partner-gallery]");
+
+  if (logo) logo.textContent = partner.logoText || partner.name?.slice(0, 2) || "GT";
+  root.querySelectorAll("[data-partner-title]").forEach((element) => {
+    element.textContent = copy.title;
+  });
+  if (summary) summary.textContent = copy.summary;
+  if (galleryTitle) galleryTitle.textContent = copy.galleryTitle || partner.name;
+  document.title = `${partner.name} | GlobTech`;
+
+  if (areas) {
+    areas.innerHTML = renderTags(copy.areas);
+  }
+
+  if (gallery) {
+    const images = Array.isArray(partner.gallery) && partner.gallery.length ? partner.gallery : [partner.image];
+    gallery.innerHTML = images
+      .filter(Boolean)
+      .map(
+        (image, index) => `
+          <figure class="gallery-item">
+            <img src="${escapeHtml(image)}" alt="${escapeHtml(`${partner.name} ${index + 1}`)}" loading="lazy" />
+            <figcaption>${escapeHtml(copy.galleryTitle || partner.name)} ${index + 1}</figcaption>
           </figure>
         `
       )
@@ -1064,10 +1214,11 @@ function applySiteSettings(language) {
   const chatbot = siteSettings.chatbot?.[language] || siteSettings.chatbot?.[defaultLanguage] || {};
   const slider = siteSettings.slider?.[language] || siteSettings.slider?.[defaultLanguage] || {};
   const projects = siteSettings.projects?.[language] || siteSettings.projects?.[defaultLanguage] || {};
+  const partners = siteSettings.partners?.[language] || siteSettings.partners?.[defaultLanguage] || {};
 
   document.querySelectorAll("[data-setting]").forEach((element) => {
     const [group, key] = element.dataset.setting.split(".");
-    const source = { hero, contact, chatbot, slider, projects }[group];
+    const source = { hero, contact, chatbot, slider, projects, partners }[group];
     const value = localizedSetting(source?.[key], language);
 
     if (value) {
@@ -1077,7 +1228,7 @@ function applySiteSettings(language) {
 
   document.querySelectorAll("[data-setting-placeholder]").forEach((element) => {
     const [group, key] = element.dataset.settingPlaceholder.split(".");
-    const source = { hero, contact, chatbot, slider, projects }[group];
+    const source = { hero, contact, chatbot, slider, projects, partners }[group];
     const value = localizedSetting(source?.[key], language);
 
     if (value) {
@@ -1127,8 +1278,10 @@ function applySiteSettings(language) {
 
   renderManagedSlider(language);
   renderManagedProjects(language);
+  renderManagedPartners(language);
   renderCustomSections(language);
   renderProjectDetail(language);
+  renderPartnerDetail(language);
 }
 
 function translate(language) {

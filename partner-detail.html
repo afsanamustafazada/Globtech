@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Partnyor | GlobTech Consulting & Engineering</title>
+    <meta name="description" content="GlobTech partnyor profili və kataloq." />
+    <meta name="theme-color" content="#111827" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body data-page="partnerDetail">
+    <a class="skip-link" href="#main" data-i18n="skip">Keçid: əsas məzmun</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html#top" aria-label="GlobTech Consulting & Engineering">
+          <span class="brand-mark" aria-hidden="true">GT</span>
+          <span class="brand-copy">
+            <strong>GlobTech</strong>
+            <small>Consulting & Engineering</small>
+          </span>
+        </a>
+
+        <button class="nav-toggle icon-button" type="button" aria-controls="primary-menu" aria-expanded="false" data-i18n-aria="nav.menu">
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+
+        <div class="nav-panel" id="primary-menu">
+          <a href="index.html#about" data-i18n="nav.about">Haqqımızda</a>
+          <a href="index.html#services" data-i18n="nav.services">Xidmətlər</a>
+          <a href="projects.html" data-i18n="nav.projects">Layihələr</a>
+          <a href="index.html#contact" data-i18n="nav.contact">Əlaqə</a>
+          <div class="language-switch" role="group" aria-label="Language">
+            <button class="lang-button is-active" type="button" data-lang="az">AZ</button>
+            <button class="lang-button" type="button" data-lang="ru">RU</button>
+            <button class="lang-button" type="button" data-lang="en">EN</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" data-partner-detail>
+      <section class="page-hero">
+        <div class="page-hero-inner">
+          <div class="breadcrumbs">
+            <a href="index.html" data-i18n="breadcrumbs.home">Ana səhifə</a>
+            <span>/</span>
+            <a href="index.html#partners" data-i18n="partners.kicker">Partnyorlar</a>
+          </div>
+          <span class="partner-logo partner-logo-large" data-partner-logo aria-hidden="true">GT</span>
+          <p class="section-kicker" data-i18n="partners.kicker">Partnyorlar</p>
+          <h1 data-partner-title>Partnyor profili</h1>
+          <p data-partner-summary>Partnyor məlumatı yüklənir.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner detail-layout">
+          <div class="detail-copy">
+            <h2>İstiqamətlər</h2>
+            <div class="tag-row partner-area-tags" data-partner-areas></div>
+          </div>
+          <aside class="facts-card">
+            <dl>
+              <div>
+                <dt>Profil</dt>
+                <dd data-partner-title>Partnyor</dd>
+              </div>
+              <div>
+                <dt>Format</dt>
+                <dd>Texnologiya və servis kataloqu</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section gallery-section">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="section-kicker">Kataloq</p>
+            <h2 data-partner-gallery-title>Partnyor kataloqu</h2>
+          </div>
+          <div class="gallery-grid" data-partner-gallery></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> GlobTech Consulting & Engineering</p>
+        <a href="index.html#top" data-i18n="footer.top">Yuxarı qayıt</a>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

@@ -317,103 +317,251 @@
         }
       },
       {
-        "id": "project-1777104670323",
-        "enabled": false,
+        "id": "azdizayn-mmc",
+        "client": "Azdizayn Məhdud Məsuliyyətli Cəmiyyət",
+        "enabled": true,
         "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
         "gallery": [
-          "assets/images/projects/araz-supermarket/network-cabinet.png"
+          "assets/images/projects/araz-supermarket/network-cabinet.png",
+          "assets/images/projects/araz-supermarket/cctv-wifi.png",
+          "assets/images/projects/araz-supermarket/pos-testing.png"
         ],
         "az": {
           "tags": [
-            "IT infrastruktur"
+            "Server",
+            "IP telefoniya",
+            "Web və mail"
           ],
           "meta": [
-            "Audit",
-            "Montaj"
+            "Server qurulması",
+            "IP telefonlar",
+            "Sayt, mail və hosting"
           ],
-          "title": "Yeni layihə",
-          "summary": "Layihə haqqında qısa məlumat.",
+          "title": "Azdizayn MMC üçün server, IP telefoniya və rəqəmsal servis infrastrukturu",
+          "summary": "Azdizayn Məhdud Məsuliyyətli Cəmiyyəti üçün serverlərin qurulması, IP telefonların sazlanması, sayt xidməti, mail servisi və hosting dəstəyi üzrə kompleks xidmət.",
           "scopeTitle": "Görülən işlərin əhatəsi",
-          "scope": "Layihədə görülən əsas işləri burada yaz.",
-          "galleryTitle": "Foto kataloq"
+          "scope": "Layihədə server mühitinin hazırlanması, IP telefoniya xəttinin qurulması, korporativ mail servisinin işlək vəziyyətə gətirilməsi, sayt xidməti və hosting dəstəyi vahid texniki xidmət kimi təşkil olunur.",
+          "galleryTitle": "Azdizayn layihə kataloqu"
         },
         "ru": {
           "tags": [
-            "IT-инфраструктура"
+            "Серверы",
+            "IP-телефония",
+            "Web и mail"
           ],
           "meta": [
-            "Аудит",
-            "Монтаж"
+            "Настройка серверов",
+            "IP-телефоны",
+            "Сайт, mail и hosting"
           ],
-          "title": "Новый проект",
-          "summary": "Краткая информация о проекте.",
+          "title": "Серверная, IP-телефония и цифровые сервисы для Azdizayn MMC",
+          "summary": "Комплекс работ для Azdizayn MMC: серверы, IP-телефоны, обслуживание сайта, mail-сервис и hosting-поддержка.",
           "scopeTitle": "Объем работ",
-          "scope": "Опишите основные выполненные работы.",
-          "galleryTitle": "Фотокаталог"
+          "scope": "В проект входят подготовка серверной среды, настройка IP-телефонии, запуск корпоративной почты, обслуживание сайта и hosting-поддержка в едином сервисном процессе.",
+          "galleryTitle": "Каталог проекта Azdizayn"
         },
         "en": {
           "tags": [
-            "IT infrastructure"
+            "Servers",
+            "IP telephony",
+            "Web and mail"
           ],
           "meta": [
-            "Audit",
-            "Installation"
+            "Server setup",
+            "IP phones",
+            "Website, mail and hosting"
           ],
-          "title": "New project",
-          "summary": "Short project description.",
+          "title": "Server, IP telephony and digital services for Azdizayn MMC",
+          "summary": "Integrated service for Azdizayn MMC covering server setup, IP phones, website service, mail service and hosting support.",
           "scopeTitle": "Scope of delivered work",
-          "scope": "Describe the main delivered work here.",
-          "galleryTitle": "Photo catalog"
+          "scope": "The project covers server environment preparation, IP telephony setup, corporate mail service, website support and hosting maintenance as one managed service flow.",
+          "galleryTitle": "Azdizayn project catalog"
         }
       },
       {
-        "id": "project-1777104678667",
-        "enabled": false,
+        "id": "fc-group-mmc",
+        "client": "FC Group MMC",
+        "enabled": true,
         "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
         "gallery": [
-          "assets/images/projects/araz-supermarket/network-cabinet.png"
+          "assets/images/projects/araz-supermarket/network-cabinet.png",
+          "assets/images/projects/araz-supermarket/cctv-wifi.png",
+          "assets/images/projects/araz-supermarket/pos-testing.png"
         ],
         "az": {
           "tags": [
-            "IT infrastruktur"
+            "Hosting",
+            "Helpdesk",
+            "IT dəstək"
           ],
           "meta": [
-            "Audit",
-            "Montaj"
+            "Hosting xidməti",
+            "Helpdesk",
+            "Texniki dəstək"
           ],
-          "title": "Yeni layihə",
-          "summary": "Layihə haqqında qısa məlumat.",
-          "scopeTitle": "Görülən işlərin əhatəsi",
-          "scope": "Layihədə görülən əsas işləri burada yaz.",
-          "galleryTitle": "Foto kataloq"
+          "title": "FC Group MMC üçün hosting, helpdesk və IT dəstək xidməti",
+          "summary": "FC Group MMC üçün hosting mühitinin idarə olunması, helpdesk müraciətlərinin qarşılanması və gündəlik IT dəstək xidmətinin təşkili.",
+          "scopeTitle": "Xidmət modeli",
+          "scope": "İşlər hosting mühitinin nəzarətdə saxlanması, istifadəçi müraciətlərinin helpdesk qaydasında qəbulu, texniki problemlərin prioritetləşdirilməsi və davamlı IT dəstəyin təmin edilməsini əhatə edir.",
+          "galleryTitle": "FC Group xidmət kataloqu"
         },
         "ru": {
           "tags": [
-            "IT-инфраструктура"
+            "Hosting",
+            "Helpdesk",
+            "IT-поддержка"
           ],
           "meta": [
-            "Аудит",
-            "Монтаж"
+            "Hosting service",
+            "Helpdesk",
+            "Техническая поддержка"
           ],
-          "title": "Новый проект",
-          "summary": "Краткая информация о проекте.",
-          "scopeTitle": "Объем работ",
-          "scope": "Опишите основные выполненные работы.",
-          "galleryTitle": "Фотокаталог"
+          "title": "Hosting, helpdesk и IT-поддержка для FC Group MMC",
+          "summary": "Управление hosting-средой, обработка helpdesk-запросов и ежедневная IT-поддержка для FC Group MMC.",
+          "scopeTitle": "Сервисная модель",
+          "scope": "Работы включают контроль hosting-среды, прием обращений через helpdesk, приоритизацию технических задач и постоянную IT-поддержку пользователей.",
+          "galleryTitle": "Каталог сервиса FC Group"
         },
         "en": {
           "tags": [
-            "IT infrastructure"
+            "Hosting",
+            "Helpdesk",
+            "IT support"
           ],
           "meta": [
-            "Audit",
-            "Installation"
+            "Hosting service",
+            "Helpdesk",
+            "Technical support"
           ],
-          "title": "New project",
-          "summary": "Short project description.",
-          "scopeTitle": "Scope of delivered work",
-          "scope": "Describe the main delivered work here.",
-          "galleryTitle": "Photo catalog"
+          "title": "Hosting, helpdesk and IT support for FC Group MMC",
+          "summary": "Hosting environment management, helpdesk request handling and daily IT support service for FC Group MMC.",
+          "scopeTitle": "Service model",
+          "scope": "The service covers hosting supervision, helpdesk request intake, technical issue prioritization and ongoing IT support for users.",
+          "galleryTitle": "FC Group service catalog"
+        }
+      },
+      {
+        "id": "rst-global-business-center",
+        "client": "RST Global Business Center",
+        "enabled": true,
+        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "gallery": [
+          "assets/images/projects/araz-supermarket/network-cabinet.png",
+          "assets/images/projects/araz-supermarket/cctv-wifi.png",
+          "assets/images/projects/araz-supermarket/pos-testing.png"
+        ],
+        "az": {
+          "tags": [
+            "IT infrastruktur",
+            "Kamera sistemləri",
+            "Mail xidməti"
+          ],
+          "meta": [
+            "Şəbəkə",
+            "CCTV",
+            "Mail və servis"
+          ],
+          "title": "RST Global Business Center üçün IT infrastruktur və təhlükəsizlik sistemləri",
+          "summary": "RST Global Business Center üçün IT infrastrukturun qurulması, kamera sistemləri, mail xidməti və obyekt üzrə texniki servis dəstəyi.",
+          "scopeTitle": "Obyekt üzrə işlər",
+          "scope": "Layihə ofis və biznes mərkəzi mühitində şəbəkə infrastrukturunun qurulması, CCTV kamera nöqtələrinin planlanması, mail xidmətinin sazlanması və istismar zamanı texniki dəstəyi əhatə edir.",
+          "galleryTitle": "RST Global Business Center kataloqu"
+        },
+        "ru": {
+          "tags": [
+            "IT-инфраструктура",
+            "Камеры",
+            "Mail-сервис"
+          ],
+          "meta": [
+            "Сеть",
+            "CCTV",
+            "Mail и сервис"
+          ],
+          "title": "IT-инфраструктура и системы безопасности для RST Global Business Center",
+          "summary": "Построение IT-инфраструктуры, камерных систем, mail-сервиса и технической поддержки для RST Global Business Center.",
+          "scopeTitle": "Работы по объекту",
+          "scope": "Проект охватывает сетевую инфраструктуру для бизнес-центра, планирование CCTV-точек, настройку mail-сервиса и техническую поддержку эксплуатации.",
+          "galleryTitle": "Каталог RST Global Business Center"
+        },
+        "en": {
+          "tags": [
+            "IT infrastructure",
+            "Camera systems",
+            "Mail service"
+          ],
+          "meta": [
+            "Network",
+            "CCTV",
+            "Mail and service"
+          ],
+          "title": "IT infrastructure and security systems for RST Global Business Center",
+          "summary": "IT infrastructure deployment, camera systems, mail service and facility technical support for RST Global Business Center.",
+          "scopeTitle": "Facility work scope",
+          "scope": "The project covers business-center network infrastructure, CCTV point planning, mail service configuration and technical support during operation.",
+          "galleryTitle": "RST Global Business Center catalog"
+        }
+      },
+      {
+        "id": "dominos-azerbaijan",
+        "client": "Dominos Azerbaijan",
+        "enabled": true,
+        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "gallery": [
+          "assets/images/projects/araz-supermarket/network-cabinet.png",
+          "assets/images/projects/araz-supermarket/cctv-wifi.png",
+          "assets/images/projects/araz-supermarket/pos-testing.png"
+        ],
+        "az": {
+          "tags": [
+            "Texniki dəstək",
+            "Servis",
+            "Retail/Food"
+          ],
+          "meta": [
+            "Dəstək",
+            "Monitorinq",
+            "Operativ müdaxilə"
+          ],
+          "title": "Dominos Azerbaijan üçün texniki dəstək xidməti",
+          "summary": "Dominos Azerbaijan üçün gündəlik texniki dəstək, istifadəçi müraciətlərinin cavablandırılması və filial əməliyyatlarına uyğun IT servis modeli.",
+          "scopeTitle": "Dəstək xidməti",
+          "scope": "Xidmət texniki müraciətlərin qəbulu, nasazlıqların ilkin diaqnostikası, iş prosesinə təsir edən problemlərin operativ həlli və filial/əməliyyat komandaları ilə koordinasiyanı əhatə edir.",
+          "galleryTitle": "Dominos Azerbaijan xidmət kataloqu"
+        },
+        "ru": {
+          "tags": [
+            "Техническая поддержка",
+            "Сервис",
+            "Retail/Food"
+          ],
+          "meta": [
+            "Поддержка",
+            "Мониторинг",
+            "Оперативное реагирование"
+          ],
+          "title": "Техническая поддержка для Dominos Azerbaijan",
+          "summary": "Ежедневная техническая поддержка, обработка пользовательских обращений и IT-сервисная модель для операционной работы Dominos Azerbaijan.",
+          "scopeTitle": "Сервис поддержки",
+          "scope": "Сервис включает прием технических обращений, первичную диагностику, оперативное решение проблем, влияющих на работу, и координацию с филиальными командами.",
+          "galleryTitle": "Каталог сервиса Dominos Azerbaijan"
+        },
+        "en": {
+          "tags": [
+            "Technical support",
+            "Service",
+            "Retail/Food"
+          ],
+          "meta": [
+            "Support",
+            "Monitoring",
+            "Rapid response"
+          ],
+          "title": "Technical support service for Dominos Azerbaijan",
+          "summary": "Daily technical support, user request handling and an IT service model aligned with Dominos Azerbaijan operations.",
+          "scopeTitle": "Support service",
+          "scope": "The service includes technical request intake, initial diagnostics, rapid resolution of operation-impacting issues and coordination with branch teams.",
+          "galleryTitle": "Dominos Azerbaijan service catalog"
         }
       }
     ]
@@ -445,5 +593,294 @@
         "buttonHref": "index.html#contact"
       }
     }
-  ]
+  ],
+  "partners": {
+    "az": {
+      "kicker": "Partnyorlar",
+      "title": "Partnyor olduğumuz şirkətlər",
+      "lead": "Klikləyib hər partnyor üzrə məlumat, istiqamət və kataloq şəkillərinə baxa bilərsiniz."
+    },
+    "ru": {
+      "kicker": "Партнеры",
+      "title": "Компании, с которыми мы работаем",
+      "lead": "Откройте карточку партнера с описанием, направлениями и каталогом."
+    },
+    "en": {
+      "kicker": "Partners",
+      "title": "Companies we partner with",
+      "lead": "Open each partner card to view details, focus areas and catalog images."
+    },
+    "items": [
+      {
+        "id": "dahua",
+        "enabled": true,
+        "name": "Dahua",
+        "logoText": "DH",
+        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "gallery": [
+          "assets/images/projects/araz-supermarket/network-cabinet.png",
+          "assets/images/projects/araz-supermarket/cctv-wifi.png",
+          "assets/images/projects/araz-supermarket/pos-testing.png"
+        ],
+        "az": {
+          "short": "Video müşahidə və təhlükəsizlik texnologiyaları",
+          "title": "Dahua partnyor profili",
+          "summary": "Dahua üzrə GlobTech layihələrində istifadə edilə bilən texnologiya və servis istiqamətləri.",
+          "areas": [
+            "CCTV",
+            "Video analytics",
+            "Security"
+          ],
+          "galleryTitle": "Dahua kataloqu"
+        },
+        "ru": {
+          "short": "Видеонаблюдение и технологии безопасности",
+          "title": "Профиль партнера Dahua",
+          "summary": "Технологии и сервисные направления Dahua, которые могут использоваться в проектах GlobTech.",
+          "areas": [
+            "CCTV",
+            "Video analytics",
+            "Security"
+          ],
+          "galleryTitle": "Каталог Dahua"
+        },
+        "en": {
+          "short": "Video surveillance and security technologies",
+          "title": "Dahua partner profile",
+          "summary": "Dahua technology and service directions that can be used across GlobTech projects.",
+          "areas": [
+            "CCTV",
+            "Video analytics",
+            "Security"
+          ],
+          "galleryTitle": "Dahua catalog"
+        }
+      },
+      {
+        "id": "zkteco",
+        "enabled": true,
+        "name": "ZKTeco",
+        "logoText": "ZK",
+        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "gallery": [
+          "assets/images/projects/araz-supermarket/network-cabinet.png",
+          "assets/images/projects/araz-supermarket/cctv-wifi.png",
+          "assets/images/projects/araz-supermarket/pos-testing.png"
+        ],
+        "az": {
+          "short": "Access control, biometrik sistemlər və turniket həlləri",
+          "title": "ZKTeco partnyor profili",
+          "summary": "ZKTeco üzrə GlobTech layihələrində istifadə edilə bilən texnologiya və servis istiqamətləri.",
+          "areas": [
+            "Access control",
+            "Biometrics",
+            "Turnstiles"
+          ],
+          "galleryTitle": "ZKTeco kataloqu"
+        },
+        "ru": {
+          "short": "Access control, биометрия и турникетные решения",
+          "title": "Профиль партнера ZKTeco",
+          "summary": "Технологии и сервисные направления ZKTeco, которые могут использоваться в проектах GlobTech.",
+          "areas": [
+            "Access control",
+            "Biometrics",
+            "Turnstiles"
+          ],
+          "galleryTitle": "Каталог ZKTeco"
+        },
+        "en": {
+          "short": "Access control, biometric systems and turnstile solutions",
+          "title": "ZKTeco partner profile",
+          "summary": "ZKTeco technology and service directions that can be used across GlobTech projects.",
+          "areas": [
+            "Access control",
+            "Biometrics",
+            "Turnstiles"
+          ],
+          "galleryTitle": "ZKTeco catalog"
+        }
+      },
+      {
+        "id": "rubezh",
+        "enabled": true,
+        "name": "Rubezh",
+        "logoText": "RB",
+        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "gallery": [
+          "assets/images/projects/araz-supermarket/network-cabinet.png",
+          "assets/images/projects/araz-supermarket/cctv-wifi.png",
+          "assets/images/projects/araz-supermarket/pos-testing.png"
+        ],
+        "az": {
+          "short": "Yanğın siqnalizasiya və bildiriş sistemləri",
+          "title": "Rubezh partnyor profili",
+          "summary": "Rubezh üzrə GlobTech layihələrində istifadə edilə bilən texnologiya və servis istiqamətləri.",
+          "areas": [
+            "Fire alarm",
+            "Notification",
+            "Safety"
+          ],
+          "galleryTitle": "Rubezh kataloqu"
+        },
+        "ru": {
+          "short": "Пожарная сигнализация и системы оповещения",
+          "title": "Профиль партнера Rubezh",
+          "summary": "Технологии и сервисные направления Rubezh, которые могут использоваться в проектах GlobTech.",
+          "areas": [
+            "Fire alarm",
+            "Notification",
+            "Safety"
+          ],
+          "galleryTitle": "Каталог Rubezh"
+        },
+        "en": {
+          "short": "Fire alarm and notification systems",
+          "title": "Rubezh partner profile",
+          "summary": "Rubezh technology and service directions that can be used across GlobTech projects.",
+          "areas": [
+            "Fire alarm",
+            "Notification",
+            "Safety"
+          ],
+          "galleryTitle": "Rubezh catalog"
+        }
+      },
+      {
+        "id": "hikvision",
+        "enabled": true,
+        "name": "Hikvision",
+        "logoText": "HK",
+        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "gallery": [
+          "assets/images/projects/araz-supermarket/network-cabinet.png",
+          "assets/images/projects/araz-supermarket/cctv-wifi.png",
+          "assets/images/projects/araz-supermarket/pos-testing.png"
+        ],
+        "az": {
+          "short": "CCTV, video analitika və monitorinq həlləri",
+          "title": "Hikvision partnyor profili",
+          "summary": "Hikvision üzrə GlobTech layihələrində istifadə edilə bilən texnologiya və servis istiqamətləri.",
+          "areas": [
+            "CCTV",
+            "Monitoring",
+            "Analytics"
+          ],
+          "galleryTitle": "Hikvision kataloqu"
+        },
+        "ru": {
+          "short": "CCTV, видеоаналитика и мониторинг",
+          "title": "Профиль партнера Hikvision",
+          "summary": "Технологии и сервисные направления Hikvision, которые могут использоваться в проектах GlobTech.",
+          "areas": [
+            "CCTV",
+            "Monitoring",
+            "Analytics"
+          ],
+          "galleryTitle": "Каталог Hikvision"
+        },
+        "en": {
+          "short": "CCTV, video analytics and monitoring solutions",
+          "title": "Hikvision partner profile",
+          "summary": "Hikvision technology and service directions that can be used across GlobTech projects.",
+          "areas": [
+            "CCTV",
+            "Monitoring",
+            "Analytics"
+          ],
+          "galleryTitle": "Hikvision catalog"
+        }
+      },
+      {
+        "id": "grandstream",
+        "enabled": true,
+        "name": "Grandstream",
+        "logoText": "GS",
+        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "gallery": [
+          "assets/images/projects/araz-supermarket/network-cabinet.png",
+          "assets/images/projects/araz-supermarket/cctv-wifi.png",
+          "assets/images/projects/araz-supermarket/pos-testing.png"
+        ],
+        "az": {
+          "short": "IP telefoniya, PBX və korporativ rabitə həlləri",
+          "title": "Grandstream partnyor profili",
+          "summary": "Grandstream üzrə GlobTech layihələrində istifadə edilə bilən texnologiya və servis istiqamətləri.",
+          "areas": [
+            "IP telephony",
+            "PBX",
+            "VoIP"
+          ],
+          "galleryTitle": "Grandstream kataloqu"
+        },
+        "ru": {
+          "short": "IP-телефония, PBX и корпоративная связь",
+          "title": "Профиль партнера Grandstream",
+          "summary": "Технологии и сервисные направления Grandstream, которые могут использоваться в проектах GlobTech.",
+          "areas": [
+            "IP telephony",
+            "PBX",
+            "VoIP"
+          ],
+          "galleryTitle": "Каталог Grandstream"
+        },
+        "en": {
+          "short": "IP telephony, PBX and enterprise communication solutions",
+          "title": "Grandstream partner profile",
+          "summary": "Grandstream technology and service directions that can be used across GlobTech projects.",
+          "areas": [
+            "IP telephony",
+            "PBX",
+            "VoIP"
+          ],
+          "galleryTitle": "Grandstream catalog"
+        }
+      },
+      {
+        "id": "muk-training-center",
+        "enabled": true,
+        "name": "Muk Training Center",
+        "logoText": "MUK",
+        "image": "assets/images/projects/araz-supermarket/network-cabinet.png",
+        "gallery": [
+          "assets/images/projects/araz-supermarket/network-cabinet.png",
+          "assets/images/projects/araz-supermarket/cctv-wifi.png",
+          "assets/images/projects/araz-supermarket/pos-testing.png"
+        ],
+        "az": {
+          "short": "Təlim, sertifikasiya və IT bilik mərkəzi",
+          "title": "Muk Training Center partnyor profili",
+          "summary": "Muk Training Center üzrə GlobTech layihələrində istifadə edilə bilən texnologiya və servis istiqamətləri.",
+          "areas": [
+            "Training",
+            "Certification",
+            "IT education"
+          ],
+          "galleryTitle": "Muk Training Center kataloqu"
+        },
+        "ru": {
+          "short": "Обучение, сертификация и IT-знания",
+          "title": "Профиль партнера Muk Training Center",
+          "summary": "Технологии и сервисные направления Muk Training Center, которые могут использоваться в проектах GlobTech.",
+          "areas": [
+            "Training",
+            "Certification",
+            "IT education"
+          ],
+          "galleryTitle": "Каталог Muk Training Center"
+        },
+        "en": {
+          "short": "Training, certification and IT knowledge center",
+          "title": "Muk Training Center partner profile",
+          "summary": "Muk Training Center technology and service directions that can be used across GlobTech projects.",
+          "areas": [
+            "Training",
+            "Certification",
+            "IT education"
+          ],
+          "galleryTitle": "Muk Training Center catalog"
+        }
+      }
+    ]
+  }
 }

@@ -1145,6 +1145,34 @@ textarea {
     box-shadow 160ms ease;
 }
 
+.partner-card-detail {
+  align-content: start;
+}
+
+.partner-logo {
+  display: inline-grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--ink), #28313b 60%, var(--red));
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
+.partner-logo-large {
+  width: 76px;
+  height: 76px;
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+}
+
+.partner-area-tags {
+  margin-top: 18px;
+}
+
 .partner-card:hover,
 .partner-card:focus-visible {
   border-color: var(--red);
