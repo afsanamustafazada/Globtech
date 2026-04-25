@@ -1,0 +1,78 @@
+{
+  "whatsapp": {
+    "phone": "994503409099",
+    "message": {
+      "az": "Salam, GlobTech ilə əlaqə saxlamaq istəyirəm.",
+      "ru": "Здравствуйте, хочу связаться с GlobTech.",
+      "en": "Hello, I would like to contact GlobTech."
+    },
+    "projectMessage": {
+      "az": "Salam, GlobTech ilə layihə haqqında danışmaq istəyirəm.",
+      "ru": "Здравствуйте, хочу обсудить проект с GlobTech.",
+      "en": "Hello, I would like to discuss a project with GlobTech."
+    }
+  },
+  "hero": {
+    "az": {
+      "eyebrow": "IT • ELV • Consulting • Engineering",
+      "title": "GlobTech Consulting & Engineering",
+      "lead": "Biznes, ictimai və yaşayış obyektləri üçün İT infrastrukturu, zəif axın sistemləri, layihələndirmə və servis xidmətlərini vahid mühəndislik yanaşması ilə qururuq.",
+      "primaryCta": "Layihəni müzakirə et",
+      "secondaryCta": "Zəng et"
+    },
+    "ru": {
+      "eyebrow": "IT • ELV • Consulting • Engineering",
+      "title": "GlobTech Consulting & Engineering",
+      "lead": "Проектируем и внедряем IT-инфраструктуру, слаботочные системы, инженерную документацию и сервис для бизнеса, общественных и жилых объектов.",
+      "primaryCta": "Обсудить проект",
+      "secondaryCta": "Позвонить"
+    },
+    "en": {
+      "eyebrow": "IT • ELV • Consulting • Engineering",
+      "title": "GlobTech Consulting & Engineering",
+      "lead": "We design and deliver IT infrastructure, low-voltage systems, engineering documentation and service support for business, public and residential facilities.",
+      "primaryCta": "Discuss a project",
+      "secondaryCta": "Call now"
+    }
+  },
+  "contact": {
+    "phonePrimary": "+994 50 340 90 99",
+    "phonePrimaryHref": "+994503409099",
+    "phoneSecondary": "+994 77 340 90 99",
+    "phoneSecondaryHref": "+994773409099",
+    "email": "office@gtcoen.com",
+    "address": {
+      "az": "H. Əliyev pr. 187C, BMS Plaza, 12-ci mərtəbə",
+      "ru": "пр. Г. Алиева 187C, BMS Plaza, 12-й этаж",
+      "en": "187C H. Aliyev Ave., BMS Plaza, 12th floor"
+    },
+    "hours": {
+      "az": "B.e - C. 09:00 - 18:00",
+      "ru": "Пн - Пт 09:00 - 18:00",
+      "en": "Mon - Fri 09:00 - 18:00"
+    }
+  },
+  "chatbot": {
+    "az": {
+      "open": "Sual ver",
+      "title": "GlobTech AI Chat",
+      "subtitle": "Layihə və xidmətlər haqqında soruşun",
+      "welcome": "Salam! IT infrastruktur, CCTV, access control, yanğın sistemi və servis haqqında sualınızı yazın.",
+      "placeholder": "Sualınızı yazın..."
+    },
+    "ru": {
+      "open": "Спросить",
+      "title": "GlobTech AI Chat",
+      "subtitle": "Задайте вопрос о проектах и услугах",
+      "welcome": "Здравствуйте! Напишите вопрос об IT-инфраструктуре, CCTV, access control, пожарных системах или сервисе.",
+      "placeholder": "Напишите вопрос..."
+    },
+    "en": {
+      "open": "Ask AI",
+      "title": "GlobTech AI Chat",
+      "subtitle": "Ask about projects and services",
+      "welcome": "Hi! Ask about IT infrastructure, CCTV, access control, fire systems or service support.",
+      "placeholder": "Write your question..."
+    }
+  }
+}

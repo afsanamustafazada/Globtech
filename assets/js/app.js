@@ -733,6 +733,7 @@ const navToggle = document.querySelector(".nav-toggle");
 const navPanel = document.querySelector(".nav-panel");
 const languageButtons = document.querySelectorAll("[data-lang]");
 const descriptionMeta = document.querySelector('meta[name="description"]');
+let siteSettings = null;
 
 function getInitialLanguage() {
   const params = new URLSearchParams(window.location.search);
@@ -788,6 +789,112 @@ function syncLocalizedLinks(language) {
   });
 }
 
+async function loadSiteSettings() {
+  if (window.location.protocol === "file:") {
+    return;
+  }
+
+  try {
+    const response = await fetch("/api/settings", { cache: "no-store" });
+
+    if (response.ok) {
+      siteSettings = await response.json();
+    }
+  } catch {
+    siteSettings = null;
+  }
+}
+
+function localizedSetting(value, language) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    return value || "";
+  }
+
+  return value[language] || value[defaultLanguage] || Object.values(value)[0] || "";
+}
+
+function cleanPhone(value) {
+  return String(value || "").replace(/[^\d]/g, "");
+}
+
+function buildWhatsAppUrl(kind, language) {
+  const whatsapp = siteSettings?.whatsapp || {};
+  const phone = cleanPhone(whatsapp.phone || "994503409099");
+  const messageSource = kind === "project" ? whatsapp.projectMessage : whatsapp.message;
+  const message = localizedSetting(messageSource, language);
+  return `https://wa.me/${phone}${message ? `?text=${encodeURIComponent(message)}` : ""}`;
+}
+
+function applySiteSettings(language) {
+  if (!siteSettings) {
+    return;
+  }
+
+  const hero = siteSettings.hero?.[language] || siteSettings.hero?.[defaultLanguage] || {};
+  const contact = siteSettings.contact || {};
+  const chatbot = siteSettings.chatbot?.[language] || siteSettings.chatbot?.[defaultLanguage] || {};
+
+  document.querySelectorAll("[data-setting]").forEach((element) => {
+    const [group, key] = element.dataset.setting.split(".");
+    const source = { hero, contact, chatbot }[group];
+    const value = localizedSetting(source?.[key], language);
+
+    if (value) {
+      element.textContent = value;
+    }
+  });
+
+  document.querySelectorAll("[data-setting-placeholder]").forEach((element) => {
+    const [group, key] = element.dataset.settingPlaceholder.split(".");
+    const source = { hero, contact, chatbot }[group];
+    const value = localizedSetting(source?.[key], language);
+
+    if (value) {
+      element.setAttribute("placeholder", value);
+    }
+  });
+
+  const phonePrimaryLink = document.querySelector('[data-contact-link="phonePrimary"]');
+  const phonePrimaryText = document.querySelector('[data-contact-text="phonePrimary"]');
+  const phoneSecondaryLink = document.querySelector('[data-contact-link="phoneSecondary"]');
+  const phoneSecondaryText = document.querySelector('[data-contact-text="phoneSecondary"]');
+  const emailLink = document.querySelector('[data-contact-link="email"]');
+  const emailText = document.querySelector('[data-contact-text="email"]');
+  const contactForm = document.querySelector("[data-contact-form]");
+
+  if (contact.phonePrimaryHref && phonePrimaryLink) {
+    phonePrimaryLink.setAttribute("href", `tel:${contact.phonePrimaryHref}`);
+  }
+
+  if (contact.phonePrimary && phonePrimaryText) {
+    phonePrimaryText.textContent = contact.phonePrimary;
+  }
+
+  if (contact.phoneSecondaryHref && phoneSecondaryLink) {
+    phoneSecondaryLink.setAttribute("href", `tel:${contact.phoneSecondaryHref}`);
+  }
+
+  if (contact.phoneSecondary && phoneSecondaryText) {
+    phoneSecondaryText.textContent = contact.phoneSecondary;
+  }
+
+  if (contact.email && emailLink) {
+    emailLink.setAttribute("href", `mailto:${contact.email}`);
+  }
+
+  if (contact.email && emailText) {
+    emailText.textContent = contact.email;
+  }
+
+  if (contact.email && contactForm) {
+    contactForm.setAttribute("action", `mailto:${contact.email}`);
+  }
+
+  document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
+    link.setAttribute("href", buildWhatsAppUrl(link.dataset.whatsappLink, language));
+  });
+}
+
 function translate(language) {
   const dictionary = translations[language] || translations[defaultLanguage];
   const titleKey = `page.${currentPage}.title`;
@@ -824,6 +931,7 @@ function translate(language) {
   localStorage.setItem("globtech-language", language);
   updateUrlLanguage(language);
   syncLocalizedLinks(language);
+  applySiteSettings(language);
 
   if (window.lucide) {
     window.lucide.createIcons();
@@ -1150,8 +1258,10 @@ if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
 
-initSliders();
-initMotion();
-initHeroCounters();
-initAiAssistant();
-translate(getInitialLanguage());
+loadSiteSettings().finally(() => {
+  initSliders();
+  initMotion();
+  initHeroCounters();
+  initAiAssistant();
+  translate(getInitialLanguage());
+});

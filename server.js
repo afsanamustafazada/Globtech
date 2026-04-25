@@ -5,6 +5,7 @@ const path = require("node:path");
 const rootDir = __dirname;
 const port = Number(process.env.PORT || 3000);
 const defaultModel = "gemini-2.5-flash";
+const settingsFile = path.join(rootDir, "data", "site-settings.json");
 
 loadEnvFile(path.join(rootDir, ".env"));
 
@@ -59,7 +60,7 @@ function readJsonBody(request) {
     request.on("data", (chunk) => {
       body += chunk;
 
-      if (body.length > 12000) {
+      if (body.length > 80000) {
         reject(new Error("Request body is too large."));
         request.destroy();
       }
@@ -75,6 +76,78 @@ function readJsonBody(request) {
 
     request.on("error", reject);
   });
+}
+
+function isLocalRequest(request) {
+  const address = request.socket.remoteAddress || "";
+  return address === "127.0.0.1" || address === "::1" || address === "::ffff:127.0.0.1";
+}
+
+function canEditSettings(request) {
+  const adminToken = process.env.ADMIN_TOKEN;
+
+  if (!adminToken) {
+    return isLocalRequest(request);
+  }
+
+  return request.headers["x-admin-token"] === adminToken;
+}
+
+async function handleSettings(request, response) {
+  if (request.method === "GET") {
+    fs.readFile(settingsFile, "utf8", (error, content) => {
+      if (error) {
+        sendJson(response, error.code === "ENOENT" ? 404 : 500, {
+          error: error.code === "ENOENT" ? "Settings file was not found." : "Could not read settings.",
+        });
+        return;
+      }
+
+      response.writeHead(200, {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-store",
+      });
+      response.end(content);
+    });
+    return;
+  }
+
+  if (request.method !== "PUT") {
+    sendJson(response, 405, { error: "Method not allowed." });
+    return;
+  }
+
+  if (!canEditSettings(request)) {
+    sendJson(response, 401, { error: "Admin token is required." });
+    return;
+  }
+
+  try {
+    const settings = await readJsonBody(request);
+
+    if (!settings || typeof settings !== "object" || Array.isArray(settings)) {
+      sendJson(response, 400, { error: "Invalid settings payload." });
+      return;
+    }
+
+    fs.mkdir(path.dirname(settingsFile), { recursive: true }, (mkdirError) => {
+      if (mkdirError) {
+        sendJson(response, 500, { error: "Could not create data directory." });
+        return;
+      }
+
+      fs.writeFile(settingsFile, `${JSON.stringify(settings, null, 2)}\n`, "utf8", (writeError) => {
+        if (writeError) {
+          sendJson(response, 500, { error: "Could not save settings." });
+          return;
+        }
+
+        sendJson(response, 200, { ok: true, settings });
+      });
+    });
+  } catch (error) {
+    sendJson(response, 400, { error: error.message || "Invalid JSON body." });
+  }
 }
 
 function getStaticFilePath(requestUrl) {
@@ -212,6 +285,11 @@ async function handleGemini(request, response) {
 }
 
 const server = http.createServer((request, response) => {
+  if (request.url.startsWith("/api/settings")) {
+    handleSettings(request, response);
+    return;
+  }
+
   if (request.url.startsWith("/api/gemini")) {
     handleGemini(request, response);
     return;

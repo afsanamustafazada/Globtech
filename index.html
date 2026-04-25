@@ -60,20 +60,20 @@
         <div class="hero-media" aria-hidden="true"></div>
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-inner">
-          <p class="eyebrow" data-i18n="hero.eyebrow">IT • ELV • Consulting • Engineering</p>
-          <h1 id="hero-title">GlobTech Consulting & Engineering</h1>
-          <p class="hero-lead" data-i18n="hero.lead">
+          <p class="eyebrow" data-i18n="hero.eyebrow" data-setting="hero.eyebrow">IT • ELV • Consulting • Engineering</p>
+          <h1 id="hero-title" data-setting="hero.title">GlobTech Consulting & Engineering</h1>
+          <p class="hero-lead" data-i18n="hero.lead" data-setting="hero.lead">
             Biznes, ictimai və yaşayış obyektləri üçün İT infrastrukturu, zəif axın sistemləri,
             layihələndirmə və servis xidmətlərini vahid mühəndislik yanaşması ilə qururuq.
           </p>
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button button-primary" href="#contact">
               <i data-lucide="clipboard-check" aria-hidden="true"></i>
-              <span data-i18n="hero.primaryCta">Layihəni müzakirə et</span>
+              <span data-i18n="hero.primaryCta" data-setting="hero.primaryCta">Layihəni müzakirə et</span>
             </a>
-            <a class="button button-secondary" href="https://wa.me/994503409099?text=Salam%2C%20GlobTech%20ilə%20əlaqə%20saxlamaq%20istəyirəm." target="_blank" rel="noopener">
+            <a class="button button-secondary" href="https://wa.me/994503409099?text=Salam%2C%20GlobTech%20ilə%20əlaqə%20saxlamaq%20istəyirəm." target="_blank" rel="noopener" data-whatsapp-link="default">
               <i data-lucide="message-circle" aria-hidden="true"></i>
-              <span data-i18n="hero.secondaryCta">Zəng et</span>
+              <span data-i18n="hero.secondaryCta" data-setting="hero.secondaryCta">Zəng et</span>
             </a>
           </div>
         </div>
@@ -438,34 +438,34 @@
               sizinlə razılaşdırsın.
             </p>
             <div class="contact-list" aria-label="Contact details">
-              <a href="tel:+994503409099">
+              <a href="tel:+994503409099" data-contact-link="phonePrimary">
                 <i data-lucide="phone" aria-hidden="true"></i>
-                <span>+994 50 340 90 99</span>
+                <span data-contact-text="phonePrimary">+994 50 340 90 99</span>
               </a>
-              <a href="tel:+994773409099">
+              <a href="tel:+994773409099" data-contact-link="phoneSecondary">
                 <i data-lucide="phone-forwarded" aria-hidden="true"></i>
-                <span>+994 77 340 90 99</span>
+                <span data-contact-text="phoneSecondary">+994 77 340 90 99</span>
               </a>
-              <a href="mailto:office@gtcoen.com">
+              <a href="mailto:office@gtcoen.com" data-contact-link="email">
                 <i data-lucide="mail" aria-hidden="true"></i>
-                <span>office@gtcoen.com</span>
+                <span data-contact-text="email">office@gtcoen.com</span>
               </a>
-              <a class="whatsapp-link" href="https://wa.me/994503409099?text=Salam%2C%20GlobTech%20ilə%20əlaqə%20saxlamaq%20istəyirəm." target="_blank" rel="noopener">
+              <a class="whatsapp-link" href="https://wa.me/994503409099?text=Salam%2C%20GlobTech%20ilə%20əlaqə%20saxlamaq%20istəyirəm." target="_blank" rel="noopener" data-whatsapp-link="default">
                 <i data-lucide="message-circle" aria-hidden="true"></i>
                 <span data-i18n="contact.whatsapp">WhatsApp ilə əlaqə saxlayın</span>
               </a>
               <span>
                 <i data-lucide="map-pin" aria-hidden="true"></i>
-                <span data-i18n="contact.address">H. Əliyev pr. 187C, BMS Plaza, 12-ci mərtəbə</span>
+                <span data-i18n="contact.address" data-setting="contact.address">H. Əliyev pr. 187C, BMS Plaza, 12-ci mərtəbə</span>
               </span>
               <span>
                 <i data-lucide="clock-3" aria-hidden="true"></i>
-                <span data-i18n="contact.hours">B.e - C. 09:00 - 18:00</span>
+                <span data-i18n="contact.hours" data-setting="contact.hours">B.e - C. 09:00 - 18:00</span>
               </span>
             </div>
           </div>
 
-          <form class="contact-form" action="mailto:office@gtcoen.com" method="post" enctype="text/plain">
+          <form class="contact-form" action="mailto:office@gtcoen.com" method="post" enctype="text/plain" data-contact-form>
             <label>
               <span data-i18n="form.name">Adınız</span>
               <input name="name" type="text" autocomplete="name" required data-i18n-placeholder="form.namePlaceholder" placeholder="Ad və soyad" />
@@ -482,7 +482,7 @@
               <i data-lucide="send" aria-hidden="true"></i>
               <span data-i18n="form.submit">Göndər</span>
             </button>
-            <a class="button button-whatsapp" href="https://wa.me/994503409099?text=Salam%2C%20GlobTech%20ilə%20layihə%20haqqında%20danışmaq%20istəyirəm." target="_blank" rel="noopener">
+            <a class="button button-whatsapp" href="https://wa.me/994503409099?text=Salam%2C%20GlobTech%20ilə%20layihə%20haqqında%20danışmaq%20istəyirəm." target="_blank" rel="noopener" data-whatsapp-link="project">
               <i data-lucide="message-circle" aria-hidden="true"></i>
               <span data-i18n="form.whatsapp">Bizə WhatsApp-da yazın</span>
             </a>
@@ -501,26 +501,26 @@
     <div class="ai-chat-widget" data-ai-chat>
       <button class="ai-chat-toggle" type="button" data-ai-chat-toggle aria-expanded="false" aria-controls="ai-chat-panel">
         <span>AI</span>
-        <small data-i18n="chatbot.open">Sual ver</small>
+        <small data-i18n="chatbot.open" data-setting="chatbot.open">Sual ver</small>
       </button>
       <section class="ai-chat-panel" id="ai-chat-panel" data-ai-chat-panel aria-label="AI chatbot">
         <div class="ai-chat-header">
           <div>
-            <strong data-i18n="chatbot.title">GlobTech AI Chat</strong>
-            <span data-i18n="chatbot.subtitle">Layihə və xidmətlər haqqında soruşun</span>
+            <strong data-i18n="chatbot.title" data-setting="chatbot.title">GlobTech AI Chat</strong>
+            <span data-i18n="chatbot.subtitle" data-setting="chatbot.subtitle">Layihə və xidmətlər haqqında soruşun</span>
           </div>
           <button class="icon-button ai-chat-close" type="button" data-ai-chat-close data-i18n-aria="chatbot.close">
             <i data-lucide="x" aria-hidden="true"></i>
           </button>
         </div>
         <div class="ai-chat-messages" data-ai-chat-messages>
-          <div class="ai-chat-message ai-chat-message-bot" data-i18n="chatbot.welcome">
+          <div class="ai-chat-message ai-chat-message-bot" data-i18n="chatbot.welcome" data-setting="chatbot.welcome">
             Salam! IT infrastruktur, CCTV, access control, yanğın sistemi və servis haqqında sualınızı yazın.
           </div>
         </div>
         <form class="ai-chat-form" data-ai-chat-form>
           <label class="sr-only" for="ai-chat-message" data-i18n="chatbot.inputLabel">AI sualınız</label>
-          <textarea id="ai-chat-message" name="message" rows="2" data-i18n-placeholder="chatbot.placeholder" placeholder="Sualınızı yazın..." required></textarea>
+          <textarea id="ai-chat-message" name="message" rows="2" data-i18n-placeholder="chatbot.placeholder" data-setting-placeholder="chatbot.placeholder" placeholder="Sualınızı yazın..." required></textarea>
           <button class="icon-button ai-chat-send" type="submit" data-i18n-aria="chatbot.submit">
             <i data-lucide="send" aria-hidden="true"></i>
           </button>
